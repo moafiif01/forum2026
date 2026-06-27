@@ -1,6 +1,6 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeader from '@/components/SectionHeader';
-import { Settings, Box, Cpu, Building2, Cog, Zap, Factory, Antenna, Mountain } from 'lucide-react';
+import { Settings, Box, Cpu, Cog, Zap, Factory, Plane, Brain, Activity } from 'lucide-react';
 
 interface Filiere {
   title: string;
@@ -10,49 +10,44 @@ interface Filiere {
 
 const filieres: Filiere[] = [
   {
-    title: 'GÉNIE INDUSTRIEL',
-    options: ['INGENIERIE DES OPÉRATIONS ET DE LA LOGISTIQUE (IOL)', 'INGENIERIE DES PROJETS (IP)'],
-    icon: <Settings size={32} />,
-  },
-  {
-    title: 'GÉNIE MODÉLISATION INFORMATIQUE ET SCIENTIFIQUE (MIS)',
-    options: [],
-    icon: <Box size={32} />,
-  },
-  {
-    title: 'GÉNIE INFORMATIQUE ET DIGITALISATION (ID)',
-    options: ['SIGL : SYSTEMES D\'INFORMATIONS ET GENIE LOGICIEL', 'SCYBER : SYSTEMES ET CYBERSECURITE', 'IADATA: INTELLIGENCE ARTIFICIELLE ET DATA'],
-    icon: <Cpu size={32} />,
-  },
-  {
-    title: 'GÉNIE CIVIL',
-    options: ['BATIMENTS PONTS ET CHAUSSÉES', 'HYDRAULIQUE', 'INFRASTRUCTURES DE TRANSPORT ET MOBILITÉ', 'ENVIRONNEMENT'],
-    icon: <Building2 size={32} />,
-  },
-  {
     title: 'GÉNIE MÉCANIQUE',
-    options: ['CONCEPTION ET PRODUCTION INDUSTRIELLE', 'INDUSTRIE AÉRONAUTIQUE', 'AUTOMOBILE'],
+    options: ['CONCEPTION & PRODUCTION INDUSTRIELLE'],
     icon: <Cog size={32} />,
   },
   {
-    title: 'GÉNIE ÉLECTRIQUE',
-    options: ['ÉLECTROTECHNIQUE ET ÉLECTRONIQUE DE PUISSANCE', 'AUTOMATISME ET INFORMATIQUE INDUSTRIELLE'],
-    icon: <Zap size={32} />,
-  },
-  {
-    title: 'GÉNIE DES PROCÉDÉS INDUSTRIELS (PI)',
-    options: [],
+    title: 'GÉNIE INDUSTRIEL',
+    options: ['TECHNOLOGIES NUMÉRIQUES'],
     icon: <Factory size={32} />,
   },
   {
-    title: 'GÉNIE RÉSEAUX ET TÉLÉCOMMUNICATIONS (RT)',
-    options: [],
-    icon: <Antenna size={32} />,
+    title: 'GÉNIE DES MATÉRIAUX',
+    options: ['QUALITÉ & ENVIRONNEMENT'],
+    icon: <Box size={32} />,
   },
   {
-    title: 'GÉNIE MINÉRAL',
-    options: ['HYDROGÉOLOGIE ET GÉOLOGIE DE L\'INGENIEUR'],
-    icon: <Mountain size={32} />,
+    title: 'INGÉNIERIE MÉCANIQUE',
+    options: ['POUR L\'INDUSTRIE AÉRONAUTIQUE'],
+    icon: <Plane size={32} />,
+  },
+  {
+    title: 'INGÉNIERIE NUMÉRIQUE',
+    options: ['DATA SCIENCES & INTELLIGENCE ARTIFICIELLE'],
+    icon: <Brain size={32} />,
+  },
+  {
+    title: 'INGÉNIERIE',
+    options: ['DES SYSTÈMES ÉNERGÉTIQUES'],
+    icon: <Settings size={32} />,
+  },
+  {
+    title: 'ÉNERGIE ÉLECTRIQUE',
+    options: ['INDUSTRIE NUMÉRIQUE'],
+    icon: <Zap size={32} />,
+  },
+  {
+    title: 'GÉNIE BIOMÉDICAL',
+    options: [],
+    icon: <Activity size={32} />,
   },
 ];
 
@@ -62,24 +57,30 @@ export default function Ecole() {
 
   return (
     <div className="relative min-h-screen bg-black">
-      {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Title */}
+      <section className="pt-32 pb-12 bg-black text-center relative z-10">
+        <h1 className="font-orbitron font-black text-3xl md:text-5xl lg:text-6xl text-purple glow-purple tracking-wide leading-tight">
+          ÉCOLE NATIONALE SUPÉRIEURE
+          <br />
+          D'ARTS ET MÉTIERS
+          <br />
+          DE RABAT
+        </h1>
+      </section>
+
+      {/* Hero Video */}
+      <section className="relative min-h-[120vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
-        </div>
-        
-        <div className="relative z-10 text-center container-padding pt-24">
-          <h1 className="font-orbitron font-black text-3xl md:text-5xl lg:text-6xl text-purple glow-purple tracking-wide leading-tight">
-            L'ÉCOLE MOHAMMADIA
-            <br />
-            D'INGÉNIEURS
-          </h1>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/school_video.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black" />
         </div>
       </section>
 
@@ -89,22 +90,18 @@ export default function Ecole() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="font-montserrat text-base md:text-lg text-white/70 leading-relaxed mb-6">
-                Créée en 1959 par Sa Majesté le Roi Mohammed V, que Dieu ait son âme,{' '}
-                <span className="text-white font-semibold">L'École Mohammadia d'Ingénieurs</span>{' '}
-                est la première grande école d'Ingénieurs au Maroc. Au fil des années,
-                l'EMI a su demeurer l'École de référence au Maroc grâce à la qualité de la formation qui
-                y est dispensée et aussi grâce au niveau de la recherche qui y est menée.
+                L'École Nationale Supérieure d'Arts et Métiers de Rabat ({' '}
+                <span className="text-white font-semibold">ENSAM Rabat</span>{' '}
+                ) est une grande école publique d'ingénieurs, relevant de l'Université Mohammed V de Rabat. Elle a pour mission la formation d'ingénieurs d'État hautement qualifiés, capables de répondre aux enjeux technologiques, industriels et sociétaux contemporains.
               </p>
               <p className="font-montserrat text-base md:text-lg text-white/70 leading-relaxed">
-                <span className="text-white font-semibold">L'ÉCOLE MOHAMMADIA D'INGÉNIEURS</span>{' '}
-                met à la disposition de ses étudiants 19 options réparties sur 9 filières englobant un large panel de domaines d'Ingénierie.
+                <span className="text-white font-semibold">ENSAM RABAT</span>{' '}
+                propose 8 filières d'Ingénieur d'État couvrant un large spectre d'expertises, allant de la mécanique et l'aéronautique à l'intelligence artificielle et au génie biomédical.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-purple/20">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#0a0010] to-[#001510] flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple/20 to-pink/20 border border-purple/30 flex items-center justify-center">
-                  <span className="font-orbitron font-bold text-4xl text-purple/60">EMI</span>
-                </div>
+            <div className="rounded-2xl overflow-hidden border border-purple/20 bg-white">
+              <div className="aspect-[4/3] flex items-center justify-center p-8">
+                <img src="/logo_ensam.jpg" alt="ENSAM Rabat Logo" className="w-full h-full object-contain" />
               </div>
             </div>
           </div>

@@ -53,11 +53,22 @@ export default function TimelineSection() {
 
   useEffect(() => {
     if (contentRef.current) {
+      const elements = contentRef.current.querySelectorAll('.animate-element');
+      const img = contentRef.current.querySelector('.animate-img');
+      
       gsap.fromTo(
-        contentRef.current,
-        { opacity: 0, x: 20 },
-        { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }
+        elements,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out' }
       );
+      
+      if (img) {
+        gsap.fromTo(
+          img,
+          { scale: 1.1, opacity: 0.8 },
+          { scale: 1, opacity: 1, duration: 0.7, ease: 'power2.out' }
+        );
+      }
     }
   }, [activeYear]);
 
@@ -97,7 +108,7 @@ export default function TimelineSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative bg-black section-padding">
+    <section ref={sectionRef} className="relative bg-black pt-0 pb-20 lg:pb-32">
       <div ref={revealRef} className="container-padding">
         {/* Header */}
         <div className="text-center mb-16">
@@ -110,60 +121,75 @@ export default function TimelineSection() {
         </div>
 
         {/* Timeline */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 max-w-5xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 w-full max-w-[1300px] mx-auto justify-center items-center">
           {/* Timeline Dots */}
-          <div className="flex lg:flex-col items-center lg:items-start gap-4 lg:gap-0 lg:w-32 shrink-0">
-            <div className="relative flex lg:flex-col items-center">
+          <div className="flex lg:flex-col items-center lg:items-start gap-4 lg:gap-0 shrink-0 overflow-x-auto no-scrollbar pb-4 lg:pb-0 w-full lg:w-auto">
+            <div className="relative flex lg:flex-col items-center lg:items-start min-w-max lg:min-w-0 px-4 lg:px-0">
               {/* Vertical Line */}
-              <div className="absolute left-1/2 lg:left-1/2 top-0 bottom-0 w-px bg-white/20 -translate-x-1/2 hidden lg:block" />
+              <div className="absolute left-2.5 top-8 bottom-8 w-[2px] bg-white/30 hidden lg:block" />
               
-              {timelineData.map((item) => (
-                <div key={item.year} className="relative z-10 flex lg:flex-row items-center gap-3 lg:gap-4 lg:py-4">
-                  <button
-                    onClick={() => handleYearClick(timelineData.indexOf(item), item.year)}
-                    className={`relative w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 flex items-center justify-center transition-all duration-300 shrink-0 ${
-                      activeYear === item.year
-                        ? 'border-pink bg-pink shadow-[0_0_15px_rgba(255,20,147,0.5)]'
-                        : 'border-white/30 bg-black hover:border-white/50'
-                    }`}
+              {/* Dynamic progress line */}
+              <div 
+                className="absolute left-2.5 top-8 w-[2px] bg-pink shadow-[0_0_15px_rgba(255,20,147,0.8)] hidden lg:block transition-all duration-700 ease-out rounded-full" 
+                style={{ height: `calc(${(timelineData.findIndex(d => d.year === activeYear) / (timelineData.length - 1)) * 100}% - 3rem)` }}
+              />
+              
+              {timelineData.map((item, index) => {
+                const isActive = activeYear === item.year;
+                const isCompleted = timelineData.findIndex(d => d.year === activeYear) > index;
+                
+                return (
+                  <div 
+                    key={item.year} 
+                    className="relative z-10 flex flex-col lg:flex-row items-center gap-2 lg:gap-6 lg:py-6 cursor-pointer group"
+                    onClick={() => handleYearClick(index, item.year)}
                   >
-                    <span className={`font-orbitron text-xs lg:text-sm font-bold ${
-                      activeYear === item.year ? 'text-white' : 'text-white/50'
+                    <div className="w-5 h-5 flex items-center justify-center shrink-0">
+                      <div
+                        className={`relative w-4 h-4 lg:w-5 lg:h-5 rounded-full border-2 transition-all duration-300 ${
+                          isActive
+                            ? 'border-pink bg-pink shadow-[0_0_15px_rgba(255,20,147,0.8)] scale-[1.3]'
+                            : isCompleted
+                            ? 'border-pink bg-[#0a0010] group-hover:scale-110'
+                            : 'border-white/30 bg-[#0a0010] group-hover:scale-110 group-hover:border-white/50'
+                        }`}
+                      />
+                    </div>
+                    <span className={`font-orbitron text-sm lg:text-xl transition-colors duration-300 whitespace-nowrap ${
+                      isActive ? 'text-pink font-bold' : 'text-white/60'
                     }`}>
                       {item.year}
                     </span>
-                  </button>
-                  {/* Mobile year label */}
-                  <span className="lg:hidden font-montserrat text-sm text-white/60">
-                    {item.year}
-                  </span>
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           {/* Content Card */}
           <div
             ref={contentRef}
-            className="flex-1 glass-card rounded-2xl overflow-hidden"
+            className="w-full flex-1 max-w-6xl glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-pink/30 hover:shadow-[0_0_30px_rgba(255,20,147,0.15)] transition-all duration-500"
           >
-            <div className="flex flex-col md:flex-row">
-              <div className="p-6 md:p-8 flex-1">
-                <span className="font-orbitron font-bold text-4xl md:text-5xl text-pink glow-pink">
+            <div className="flex flex-col md:flex-row h-full">
+              <div className="p-8 md:p-10 flex-1 flex flex-col justify-center relative z-20 bg-black/40 backdrop-blur-sm">
+                <span className="animate-element font-orbitron font-black text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-pink to-purple glow-pink mb-2 inline-block">
                   {activeData.year}
                 </span>
-                <h3 className="font-orbitron font-bold text-lg md:text-xl text-white mt-4 mb-3 tracking-wide">
+                <h3 className="animate-element font-orbitron font-bold text-xl md:text-2xl text-white mt-4 mb-4 tracking-wide uppercase">
                   {activeData.title}
                 </h3>
-                <p className="font-montserrat text-sm md:text-base text-white/70 leading-relaxed">
+                <p className="animate-element font-montserrat text-base md:text-lg text-white/80 leading-relaxed">
                   {activeData.description}
                 </p>
               </div>
-              <div className="md:w-72 lg:w-80 h-48 md:h-auto shrink-0">
+              <div className="md:w-[45%] lg:w-1/2 h-64 md:h-auto shrink-0 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-10 hidden md:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 md:hidden" />
                 <img
                   src={activeData.image}
                   alt={activeData.title}
-                  className="w-full h-full object-cover"
+                  className="animate-img w-full h-full object-cover"
                 />
               </div>
             </div>

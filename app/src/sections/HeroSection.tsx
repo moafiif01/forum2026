@@ -30,7 +30,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section ref={heroRef} className="relative min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden py-32 gap-12 lg:gap-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -42,10 +42,9 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      {/* Royal Patronage */}
       <div 
         ref={patronageRef}
-        className="relative z-10 text-center mt-20 mb-auto pt-8"
+        className="relative z-10 text-center px-4"
       >
         <p className="font-montserrat font-semibold text-xs md:text-sm text-gold tracking-[0.2em] mb-2 uppercase">
           Sous le haut patronage de Sa Majesté le Roi Mohammed VI que Dieu l'assiste
@@ -55,10 +54,9 @@ export default function HeroSection() {
         </p>
       </div>
 
-      {/* Hero Content */}
       <div 
         ref={titleRef}
-        className="relative z-10 container-padding mb-auto pb-32 max-w-3xl"
+        className="relative z-10 container-padding text-center max-w-4xl"
       >
         <h1 className="font-orbitron font-bold text-3xl md:text-5xl lg:text-6xl text-white tracking-wide mb-6 leading-tight">
           C'EST QUOI LE FORUM EMI-ENTREPRISES ?
