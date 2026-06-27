@@ -9,11 +9,9 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: 32, suffix: '', label: 'ANNÉES D\'EXISTENCE' },
-  { value: 190, suffix: '', label: 'ENTREPRISES PARTICIPANTES' },
-  { value: 90, suffix: '', label: 'PARTENAIRES MÉDIATIQUES' },
-  { value: 20000, suffix: '', label: 'VISITEURS' },
-  { value: 3.3, suffix: ' M', label: 'DIRHAMS DE CHIFFRE D\'AFFAIRES', decimals: 1 },
+  { value: 2, suffix: '', label: 'ÉDITIONS' },
+  { value: 52, suffix: '', label: 'ENTREPRISES PARTICIPANTES' },
+  { value: 500, suffix: '+', label: 'PARTICIPANTS PAR JOUR' },
 ];
 
 function AnimatedCounter({ target, suffix = '', decimals = 0, inView }: { target: number; suffix?: string; decimals?: number; inView: boolean }) {
@@ -81,7 +79,7 @@ export default function StatsSection() {
           {/* Left Content */}
           <div className="flex-1">
             <p className="font-montserrat text-base text-white mb-1">
-              Le <span className="font-bold">Forum EMI-Entreprises</span>
+              Le <span className="font-bold">Forum ENSAM-Rabat</span>
             </p>
             <p className="font-montserrat text-base text-white/70 mb-10">
               <span className="font-bold text-white">Plus grand</span> Forum<br />
@@ -115,26 +113,12 @@ export default function StatsSection() {
 
           {/* Right - FE Logo */}
           <div className="lg:w-80 xl:w-96 flex items-center justify-center">
-            <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
-              <svg viewBox="0 0 200 200" className="w-full h-full">
-                <defs>
-                  <linearGradient id="feGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#fff" stopOpacity="0.9" />
-                    <stop offset="100%" stopColor="#fff" stopOpacity="0.5" />
-                  </linearGradient>
-                </defs>
-                {/* F letter */}
-                <rect x="20" y="20" width="80" height="160" rx="8" fill="none" stroke="url(#feGrad)" strokeWidth="6" />
-                <line x1="40" y1="60" x2="80" y2="60" stroke="url(#feGrad)" strokeWidth="6" strokeLinecap="round" />
-                <line x1="40" y1="100" x2="80" y2="100" stroke="url(#feGrad)" strokeWidth="6" strokeLinecap="round" />
-                <line x1="40" y1="60" x2="40" y2="140" stroke="url(#feGrad)" strokeWidth="6" strokeLinecap="round" />
-                {/* E letter */}
-                <rect x="100" y="20" width="80" height="160" rx="8" fill="none" stroke="url(#feGrad)" strokeWidth="6" />
-                <line x1="120" y1="60" x2="160" y2="60" stroke="url(#feGrad)" strokeWidth="6" strokeLinecap="round" />
-                <line x1="120" y1="100" x2="160" y2="100" stroke="url(#feGrad)" strokeWidth="6" strokeLinecap="round" />
-                <line x1="120" y1="140" x2="160" y2="140" stroke="url(#feGrad)" strokeWidth="6" strokeLinecap="round" />
-                <line x1="120" y1="60" x2="120" y2="140" stroke="url(#feGrad)" strokeWidth="6" strokeLinecap="round" />
-              </svg>
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+              <img 
+                src="/forum%20logo%20white.png" 
+                alt="Forum EMI-Entreprises Logo" 
+                className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
+              />
             </div>
           </div>
         </div>

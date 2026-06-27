@@ -11,43 +11,33 @@ interface Filiere {
 const filieres: Filiere[] = [
   {
     title: 'GÉNIE MÉCANIQUE',
-    options: ['CONCEPTION & PRODUCTION INDUSTRIELLE'],
+    options: ['Conception, Fabrication, Modélisation', 'Industrie 4.0 & Fabrication Additive'],
     icon: <Cog size={32} />,
   },
   {
-    title: 'GÉNIE INDUSTRIEL',
-    options: ['TECHNOLOGIES NUMÉRIQUES'],
-    icon: <Factory size={32} />,
-  },
-  {
-    title: 'GÉNIE DES MATÉRIAUX',
-    options: ['QUALITÉ & ENVIRONNEMENT'],
-    icon: <Box size={32} />,
-  },
-  {
-    title: 'INGÉNIERIE MÉCANIQUE',
-    options: ['POUR L\'INDUSTRIE AÉRONAUTIQUE'],
-    icon: <Plane size={32} />,
-  },
-  {
-    title: 'INGÉNIERIE NUMÉRIQUE',
-    options: ['DATA SCIENCES & INTELLIGENCE ARTIFICIELLE'],
-    icon: <Brain size={32} />,
-  },
-  {
-    title: 'INGÉNIERIE',
-    options: ['DES SYSTÈMES ÉNERGÉTIQUES'],
-    icon: <Settings size={32} />,
-  },
-  {
-    title: 'ÉNERGIE ÉLECTRIQUE',
-    options: ['INDUSTRIE NUMÉRIQUE'],
+    title: 'GÉNIE ÉLECTRIQUE',
+    options: ['Électrotechnique & Électronique', 'Automatisation & Systèmes Embarqués'],
     icon: <Zap size={32} />,
   },
   {
-    title: 'GÉNIE BIOMÉDICAL',
-    options: [],
+    title: 'GÉNIE ÉNERGÉTIQUE ET ENVIRONNEMENT',
+    options: ['Performance Énergétique', 'Énergies Renouvelables & Décarbonation'],
+    icon: <Factory size={32} />,
+  },
+  {
+    title: 'MATHÉMATIQUES APPLIQUÉES ET GÉNIE INFORMATIQUE',
+    options: ['Intelligence Artificielle', 'Cybersécurité & Systèmes d\'Information'],
+    icon: <Cpu size={32} />,
+  },
+  {
+    title: 'INGÉNIERIE DES TECHNOLOGIES DE LA SANTÉ',
+    options: ['Technologies Médicales', 'Instrumentation Biomédicale'],
     icon: <Activity size={32} />,
+  },
+  {
+    title: 'MANAGEMENT, COMMUNICATION ET CULTURE',
+    options: ['Stratégie & Communication', 'Soft Skills & Enjeux Citoyens'],
+    icon: <Brain size={32} />,
   },
 ];
 
@@ -125,8 +115,8 @@ export default function Ecole() {
 
         <div className="container-padding max-w-6xl mx-auto relative z-10">
           <SectionHeader
-            title="FILIÈRES D'EXCELLENCE"
-            subtitle="UNE DIVERSITÉ DE CHOIX POUR FACONNER VOTRE AVENIR DANS L'INGENIERIE"
+            title="DÉPARTEMENTS D'EXCELLENCE"
+            subtitle="UNE ORGANISATION ACADÉMIQUE AUTOUR DE SIX DÉPARTEMENTS SPÉCIALISÉS"
             glowColor="purple"
           />
 

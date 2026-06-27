@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,45 +7,39 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const timelineData = [
   {
-    year: 1994,
-    title: 'CRÉATION DU FORUM EMI-ENTREPRISES',
-    description: 'Création du premier Forum de type école-entreprises au Maroc',
+    year: 1980,
+    title: 'FONDATION DE L\'ENSET RABAT',
+    description: 'Création de l\'École Normale Supérieure de l\'Enseignement Technique.',
+    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80',
+  },
+  {
+    year: 2010,
+    title: 'RATTACHEMNET À L\'UNIVERSITÉ',
+    description: 'L\'école intègre officiellement l\'Université Mohammed V.',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
   },
   {
-    year: 1999,
-    title: 'EXPANSION NATIONALE',
-    description: 'Le Forum s\'affirme comme le rendez-vous incontournable du recrutement au Maroc',
+    year: 2020,
+    title: 'NAISSANCE DE L\'ENSAM RABAT',
+    description: 'L\'ENSET devient officiellement l\'ENSAM Rabat pour former des ingénieurs d\'État.',
     image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80',
   },
   {
-    year: 2019,
-    title: 'INNOVATION & CROISSANCE',
-    description: 'Record de participation avec plus de 180 entreprises et 15 000 visiteurs',
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80',
-  },
-  {
-    year: 2021,
-    title: 'PREMIÈRE ÉDITION VIRTUELLE',
-    description: 'Première édition totalement digitale en partenariat avec la plateforme Seekube.',
-    image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80',
-  },
-  {
     year: 2024,
-    title: 'XXXIÈME ÉDITION',
-    description: 'L\'élan du renouveau et de l\'excellence',
+    title: '1ÈRE ÉDITION DU FORUM',
+    description: 'Création du Forum Industriel et du Directoire Consultatif Industriel (DCI).',
     image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80',
   },
   {
     year: 2026,
-    title: 'UNE ÉDITION D\'EXCEPTION',
-    description: 'On se donne rendez-vous les 20 et 21 Mai 2026.',
+    title: '2ÈME ÉDITION',
+    description: 'L\'Ingénieur au Cœur de la Transformation Industrielle. Rendez-vous les 13 et 14 Octobre 2026.',
     image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80',
   },
 ];
 
 export default function TimelineSection() {
-  const [activeYear, setActiveYear] = useState(1994);
+  const [activeYear, setActiveYear] = useState(1980);
   const contentRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const revealRef = useScrollReveal<HTMLDivElement>({ y: 40, duration: 1, children: true, stagger: 0.2 });
@@ -72,27 +66,29 @@ export default function TimelineSection() {
     }
   }, [activeYear]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!sectionRef.current) return;
     
-    // Pin the section and update active year based on scroll progress
-    const st = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: 'top 15%', // Pin slightly below top to accommodate navbar
-      end: '+=2000',    // Scroll distance for the animation
-      pin: true,
-      onUpdate: (self) => {
-        let index = Math.floor(self.progress * timelineData.length);
-        if (index >= timelineData.length) index = timelineData.length - 1;
-        
-        setActiveYear((prev) => {
-          const nextYear = timelineData[index].year;
-          return prev !== nextYear ? nextYear : prev;
-        });
-      }
-    });
+    // Use gsap.context for proper cleanup of pinned elements in React
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top 15%', // Pin slightly below top to accommodate navbar
+        end: '+=2000',    // Scroll distance for the animation
+        pin: true,
+        onUpdate: (self) => {
+          let index = Math.floor(self.progress * timelineData.length);
+          if (index >= timelineData.length) index = timelineData.length - 1;
+          
+          setActiveYear((prev) => {
+            const nextYear = timelineData[index].year;
+            return prev !== nextYear ? nextYear : prev;
+          });
+        }
+      });
+    }, sectionRef);
 
-    return () => st.kill();
+    return () => ctx.revert();
   }, []);
 
   const handleYearClick = (index: number, year: number) => {
@@ -112,26 +108,26 @@ export default function TimelineSection() {
       <div ref={revealRef} className="container-padding">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-orbitron font-bold text-xl md:text-2xl text-white tracking-[0.08em] mb-3">
+          <h2 className="font-orbitron font-bold text-3xl md:text-4xl lg:text-5xl text-white tracking-[0.08em] mb-4">
             UN PASSÉ GLORIEUX ...
           </h2>
-          <p className="font-orbitron font-bold text-sm md:text-base text-pink glow-pink tracking-[0.15em]">
+          <p className="font-orbitron font-bold text-lg md:text-xl lg:text-2xl text-pink glow-pink tracking-[0.15em]">
             UN AVENIR PLUS RADIEUX
           </p>
         </div>
 
         {/* Timeline */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 w-full max-w-[1300px] mx-auto justify-center items-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 w-full px-4 lg:px-12 mx-auto justify-center items-center">
           {/* Timeline Dots */}
-          <div className="flex lg:flex-col items-center lg:items-start gap-4 lg:gap-0 shrink-0 overflow-x-auto no-scrollbar pb-4 lg:pb-0 w-full lg:w-auto">
+          <div className="flex lg:flex-col items-center lg:items-start gap-4 lg:gap-0 shrink-0 overflow-x-auto lg:overflow-visible no-scrollbar pb-4 lg:pb-0 w-full lg:w-auto">
             <div className="relative flex lg:flex-col items-center lg:items-start min-w-max lg:min-w-0 px-4 lg:px-0">
               {/* Vertical Line */}
-              <div className="absolute left-2.5 top-8 bottom-8 w-[2px] bg-white/30 hidden lg:block" />
+              <div className="absolute left-2.5 top-[26px] bottom-[26px] w-[2px] bg-white/30 hidden lg:block" />
               
               {/* Dynamic progress line */}
               <div 
-                className="absolute left-2.5 top-8 w-[2px] bg-pink shadow-[0_0_15px_rgba(255,20,147,0.8)] hidden lg:block transition-all duration-700 ease-out rounded-full" 
-                style={{ height: `calc(${(timelineData.findIndex(d => d.year === activeYear) / (timelineData.length - 1)) * 100}% - 3rem)` }}
+                className="absolute left-2.5 top-[26px] w-[2px] bg-pink shadow-[0_0_15px_rgba(255,20,147,0.8)] hidden lg:block transition-all duration-700 ease-out rounded-full" 
+                style={{ height: `calc((100% - 52px) * ${(timelineData.findIndex(d => d.year === activeYear) / (timelineData.length - 1))})` }}
               />
               
               {timelineData.map((item, index) => {
@@ -141,7 +137,7 @@ export default function TimelineSection() {
                 return (
                   <div 
                     key={item.year} 
-                    className="relative z-10 flex flex-col lg:flex-row items-center gap-2 lg:gap-6 lg:py-6 cursor-pointer group"
+                    className="relative z-10 flex flex-col lg:flex-row items-center gap-2 lg:gap-4 lg:py-3 cursor-pointer group"
                     onClick={() => handleYearClick(index, item.year)}
                   >
                     <div className="w-5 h-5 flex items-center justify-center shrink-0">
@@ -169,7 +165,7 @@ export default function TimelineSection() {
           {/* Content Card */}
           <div
             ref={contentRef}
-            className="w-full flex-1 max-w-6xl glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-pink/30 hover:shadow-[0_0_30px_rgba(255,20,147,0.15)] transition-all duration-500"
+            className="w-full flex-1 glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-pink/30 hover:shadow-[0_0_30px_rgba(255,20,147,0.15)] transition-all duration-500"
           >
             <div className="flex flex-col md:flex-row h-full">
               <div className="p-8 md:p-10 flex-1 flex flex-col justify-center relative z-20 bg-black/40 backdrop-blur-sm">

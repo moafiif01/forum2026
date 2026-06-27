@@ -1,70 +1,46 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-
 export default function HeroSection() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const patronageRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.5 });
-    
-    if (patronageRef.current) {
-      tl.fromTo(
-        patronageRef.current,
-        { y: -30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
-      );
-    }
-    
-    if (titleRef.current) {
-      tl.fromTo(
-        titleRef.current.children,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
-        '-=0.5'
-      );
-    }
-
-    return () => { tl.kill(); };
-  }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-[80vh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden py-32 gap-12 lg:gap-20">
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80')`,
-          }}
-        />
-        <div className="absolute inset-0 bg-black/60" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/Forum Ensam Rabat.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black" />
       </div>
+      {/* Hero Content */}
+      <div className="relative z-10 container-padding w-full max-w-5xl mx-auto flex flex-col items-center justify-center text-center">
+        <div className="inline-block px-4 py-1.5 rounded-full border border-pink/30 bg-pink/10 backdrop-blur-md mb-8">
+          <span className="font-montserrat text-[10px] sm:text-xs font-semibold text-pink tracking-[0.2em] uppercase">
+            2ème Édition
+          </span>
+        </div>
 
-      <div 
-        ref={patronageRef}
-        className="relative z-10 text-center px-4"
-      >
-        <p className="font-montserrat font-semibold text-xs md:text-sm text-gold tracking-[0.2em] mb-2 uppercase">
-          Sous le haut patronage de Sa Majesté le Roi Mohammed VI que Dieu l'assiste
-        </p>
-        <p className="font-amiri text-lg md:text-xl text-gold tracking-[0.15em]" dir="rtl">
-          تحت الرعاية السامية لصاحب الجلالة الملك محمد السادس نصره الله
-        </p>
-      </div>
-
-      <div 
-        ref={titleRef}
-        className="relative z-10 container-padding text-center max-w-4xl"
-      >
-        <h1 className="font-orbitron font-bold text-3xl md:text-5xl lg:text-6xl text-white tracking-wide mb-6 leading-tight">
-          C'EST QUOI LE FORUM EMI-ENTREPRISES ?
+        <h1 className="font-orbitron font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white tracking-[0.05em] leading-[1.1] mb-6 drop-shadow-2xl">
+          FORUM <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-pink to-gold glow-pink">
+            ENSAM-RABAT
+          </span>
         </h1>
-        <p className="font-montserrat text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
-          Le plus grand salon de type étudiant entreprises au Maroc. Depuis 1994, chaque comité s'engage à
-          porter encore plus haut le nom du Forum EMI-Entreprises. Et l'égide continue à se reproduire
+
+        <p className="font-montserrat text-sm sm:text-base md:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed tracking-wide mb-10 drop-shadow-lg">
+          L'INGÉNIEUR AU CŒUR DE LA TRANSFORMATION INDUSTRIELLE :<br className="hidden md:block" /> INNOVER POUR LE MAROC DE DEMAIN
         </p>
+
+        <div className="flex flex-col sm:flex-row items-center gap-6">
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-md">
+            <span className="font-orbitron font-bold text-white text-lg tracking-wider">13 - 14</span>
+            <div className="h-4 w-[1px] bg-white/30"></div>
+            <span className="font-montserrat text-sm text-pink font-semibold tracking-widest uppercase">Oct 2026</span>
+          </div>
+        </div>
       </div>
     </section>
   );

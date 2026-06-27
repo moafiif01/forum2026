@@ -8,15 +8,13 @@ export default function Footer() {
           {/* Logo + Social */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 border-2 border-white rounded-lg flex items-center justify-center">
-                <span className="font-orbitron font-bold text-lg text-white">F</span>
-              </div>
+              <img src="/forum%20logo%20white.png" alt="Forum ENSAM-Rabat Logo" className="w-12 h-12 object-contain" />
               <div>
                 <div className="font-orbitron font-bold text-sm text-white leading-tight tracking-wider">
                   FORUM
                 </div>
                 <div className="font-montserrat text-[9px] text-white/70 tracking-[0.2em] leading-tight">
-                  EMI-ENTREPRISES
+                  ENSAM-RABAT
                 </div>
               </div>
             </div>
@@ -44,8 +42,7 @@ export default function Footer() {
               À Propos
             </h4>
             <p className="font-montserrat text-sm text-white/60 leading-relaxed">
-              Indétrônable du palmarès des salons de recrutement au Maroc, le Forum EMI-Enterprises se dépasse
-              d'année en année. Les éditions se succèdent, en gardant toujours son statut de Leader National.
+              Le Forum Industriel de l'ENSAM Rabat est un événement majeur visant à consolider l'alliance entre l'Université et l'Entreprise pour former les leaders de demain.
             </p>
           </div>
 
@@ -58,8 +55,8 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-white/40 mt-1 shrink-0" />
                 <span className="font-montserrat text-sm text-white/60">
-                  Ecole Mohammadia d'Ingénieurs,<br />
-                  Av Ibn Sina, Agdal. Rabat, Maroc
+                  École Nationale Supérieure d'Arts et Métiers,<br />
+                  Université Mohammed V, Rabat, Maroc
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -68,7 +65,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={16} className="text-white/40 shrink-0" />
-                <span className="font-montserrat text-sm text-white/60">contact@forumemientreprises.com</span>
+                <span className="font-montserrat text-sm text-white/60">contact@forumensamrabat.com</span>
               </div>
             </div>
           </div>
@@ -82,7 +79,7 @@ export default function Footer() {
               Made by <span className="text-white/80">Zyad Khalef</span>
             </p>
             <p className="font-montserrat text-xs text-white/40">
-              Forum EMI-Entreprises &copy; 1994-{new Date().getFullYear()}. All rights Reserved
+              Forum ENSAM-Rabat &copy; 2024-{new Date().getFullYear()}. All rights Reserved
             </p>
           </div>
         </div>

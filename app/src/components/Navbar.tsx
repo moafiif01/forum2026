@@ -38,15 +38,13 @@ export default function Navbar() {
         <div className="container-padding flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-10 h-10 border-2 border-white rounded-lg flex items-center justify-center">
-              <span className="font-orbitron font-bold text-lg text-white">F</span>
-            </div>
+            <img src="/forum%20logo%20white.png" alt="Forum EMI-Entreprises Logo" className="w-12 h-12 object-contain" />
             <div className="hidden sm:block">
               <div className="font-orbitron font-bold text-sm text-white leading-tight tracking-wider">
                 FORUM
               </div>
               <div className="font-montserrat text-[9px] text-white/70 tracking-[0.2em] leading-tight">
-                EMI-ENTREPRISES
+                ENSAM-RABAT
               </div>
             </div>
           </Link>
