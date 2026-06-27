@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 328 100% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 7%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 0 0% 7%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 328 100% 54%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white font-montserrat antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .glow-pink {
+    text-shadow: 0 0 10px rgba(255,20,147,0.8),
+                 0 0 20px rgba(255,20,147,0.6),
+                 0 0 40px rgba(255,20,147,0.4),
+                 0 0 80px rgba(255,20,147,0.2);
+  }
+
+  .glow-cyan {
+    text-shadow: 0 0 10px rgba(0,229,255,0.8),
+                 0 0 20px rgba(0,229,255,0.6),
+                 0 0 40px rgba(0,229,255,0.4);
+  }
+
+  .glow-purple {
+    text-shadow: 0 0 10px rgba(156,39,176,0.8),
+                 0 0 20px rgba(156,39,176,0.6),
+                 0 0 40px rgba(156,39,176,0.4);
+  }
+
+  .glow-gold {
+    text-shadow: 0 0 10px rgba(212,168,67,0.6),
+                 0 0 20px rgba(212,168,67,0.4);
+  }
+
+  .glass-card {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .gradient-border-pink {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255,20,147,0.3), rgba(156,39,176,0.3));
+    padding: 2px;
+    border-radius: 16px;
+  }
+
+  .gradient-border-pink > * {
+    background: #111;
+    border-radius: 14px;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #D4A843, #F5D76E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-platinum {
+    background: linear-gradient(135deg, #E8E8E8, #B8B8B8, #E8E8E8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-silver {
+    background: linear-gradient(135deg, #C0C0C0, #A0A0A0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-5 sm:px-8 lg:px-16 xl:px-20;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
