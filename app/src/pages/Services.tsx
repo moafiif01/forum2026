@@ -1,10 +1,10 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+﻿import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Calendar, MapPin, Clock } from 'lucide-react';
+import GlassCard from '@/components/GlassCard';
 
 interface Presentation {
   company: string;
-  color: string;
-  textColor: string;
+  glowColor: 'pink' | 'cyan' | 'purple';
   date: string;
   time: string;
   location: string;
@@ -14,53 +14,51 @@ interface Presentation {
 const presentations: Presentation[] = [
   {
     company: 'Schneider Electric',
-    color: '#3C8F37',
-    textColor: '#fff',
+    glowColor: 'cyan',
     date: 'Mercredi 30 Octobre',
     time: '18h30',
     location: "Grand Amphi de l'EMI",
-    description: 'Du spécialiste mondial en gestion de l\'énergie et en automatisation',
+    description: "Du spécialiste mondial en gestion de l'énergie et en automatisation",
   },
   {
     company: 'Wavestone',
-    color: '#6B2D8E',
-    textColor: '#fff',
+    glowColor: 'purple',
     date: 'Jeudi 21 Novembre',
     time: '12h30',
     location: "Grand Amphi de l'EMI",
-    description: 'Du cabinet de Conseil en Management et Transformation d\'Entreprises et d\'Organisations',
+    description: "Du cabinet de Conseil en Management et Transformation d'Entreprises et d'Organisations",
   },
   {
     company: 'Forvis Mazars',
-    color: '#1A3A8C',
-    textColor: '#fff',
+    glowColor: 'cyan',
     date: 'Lundi 25 Novembre',
     time: '12h00',
     location: "Grand Amphi de l'EMI",
-    description: 'Du spécialiste dans l\'audit, la fiscalité et le conseil',
+    description: "Du spécialiste dans l'audit, la fiscalité et le conseil",
   },
   {
     company: 'VINCI ENERGIES',
-    color: '#E6E6FA',
-    textColor: '#333',
+    glowColor: 'pink',
     date: 'Lundi 9 Décembre',
     time: '12h00',
     location: "Grand Amphi de l'EMI",
-    description: 'Spécialiste des solutions énergétiques et des réseaux de télécommunications',
+    description: "Spécialiste des solutions énergétiques et des réseaux de télécommunications",
   },
 ];
 
-const pfeBanners = [
-  { color: 'from-orange-500 to-orange-700', label: 'PFE 2024 - Filière Informatique' },
-  { color: 'from-green-500 to-green-700', label: 'PFE 2024 - Filière Industriel' },
-  { color: 'from-purple-500 to-purple-700', label: 'PFE 2024 - Filière Électrique' },
-  { color: 'from-blue-500 to-blue-700', label: 'PFE 2024 - Filière Mécanique' },
+type GlowColor = 'pink' | 'cyan' | 'purple';
+
+const pfeBanners: { glowColor: GlowColor, label: string }[] = [
+  { glowColor: 'pink', label: 'PFE 2024 - Filière Informatique' },
+  { glowColor: 'cyan', label: 'PFE 2024 - Filière Industriel' },
+  { glowColor: 'purple', label: 'PFE 2024 - Filière Électrique' },
+  { glowColor: 'pink', label: 'PFE 2024 - Filière Mécanique' },
 ];
 
-const recruitBanners = [
-  { color: 'from-cyan-500 to-blue-700', label: 'Recrutement 2024 - CDI' },
-  { color: 'from-pink-500 to-purple-700', label: 'Recrutement 2024 - Stage' },
-  { color: 'from-yellow-500 to-orange-700', label: 'Recrutement 2024 - Alternance' },
+const recruitBanners: { glowColor: GlowColor, label: string }[] = [
+  { glowColor: 'cyan', label: 'Recrutement 2024 - CDI' },
+  { glowColor: 'pink', label: 'Recrutement 2024 - Stage' },
+  { glowColor: 'purple', label: 'Recrutement 2024 - Alternance' },
 ];
 
 function LightStreaks() {
@@ -74,7 +72,7 @@ function LightStreaks() {
             width: '150%',
             left: '-25%',
             top: `${15 + i * 15}%`,
-            background: `linear-gradient(90deg, transparent, rgba(255,255,255,${0.03 + Math.random() * 0.05}), transparent)`,
+            background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent)`,
             animationDelay: `${i * 1.5}s`,
             animationDuration: `${8 + Math.random() * 6}s`,
           }}
@@ -110,41 +108,41 @@ export default function Services() {
           
           <div ref={presRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {presentations.map((pres) => (
-              <div
+              <GlassCard
                 key={pres.company}
-                className="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
-                style={{ backgroundColor: pres.color }}
+                glowColor={pres.glowColor}
+                className="flex flex-col"
               >
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-montserrat font-bold text-lg" style={{ color: pres.textColor }}>
+                    <span className="font-montserrat font-bold text-lg text-white">
                       {pres.company}
                     </span>
-                    <div className="font-orbitron text-xs opacity-60" style={{ color: pres.textColor }}>
+                    <div className="font-orbitron text-xs opacity-60 text-white">
                       XXXI
                     </div>
                   </div>
                   
-                  <p className="font-montserrat text-xs leading-relaxed mb-6 opacity-80" style={{ color: pres.textColor }}>
+                  <p className="font-montserrat text-xs leading-relaxed mb-6 opacity-80 text-white flex-1">
                     {pres.description}
                   </p>
                   
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2" style={{ color: pres.textColor }}>
+                  <div className="space-y-2 mt-auto">
+                    <div className="flex items-center gap-2 text-white">
                       <Calendar size={14} className="opacity-60" />
                       <span className="font-montserrat text-xs opacity-80">{pres.date}</span>
                     </div>
-                    <div className="flex items-center gap-2" style={{ color: pres.textColor }}>
+                    <div className="flex items-center gap-2 text-white">
                       <Clock size={14} className="opacity-60" />
                       <span className="font-montserrat text-xs opacity-80">{pres.time}</span>
                     </div>
-                    <div className="flex items-center gap-2" style={{ color: pres.textColor }}>
+                    <div className="flex items-center gap-2 text-white">
                       <MapPin size={14} className="opacity-60" />
                       <span className="font-montserrat text-xs opacity-80">{pres.location}</span>
                     </div>
                   </div>
                 </div>
-              </div>
+              </GlassCard>
             ))}
           </div>
         </div>
@@ -156,14 +154,15 @@ export default function Services() {
           </h2>
           <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
             {pfeBanners.map((banner, i) => (
-              <div
+              <GlassCard
                 key={i}
-                className={`shrink-0 w-64 md:w-80 h-32 rounded-xl bg-gradient-to-r ${banner.color} flex items-center justify-center`}
+                glowColor={banner.glowColor}
+                className="shrink-0 w-64 md:w-80 h-32 flex items-center justify-center p-4 cursor-default"
               >
-                <span className="font-orbitron font-bold text-sm text-white tracking-wider text-center px-4">
+                <span className="font-orbitron font-bold text-sm text-white tracking-wider text-center">
                   {banner.label}
                 </span>
-              </div>
+              </GlassCard>
             ))}
           </div>
         </div>
@@ -175,14 +174,15 @@ export default function Services() {
           </h2>
           <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
             {recruitBanners.map((banner, i) => (
-              <div
+              <GlassCard
                 key={i}
-                className={`shrink-0 w-64 md:w-80 h-32 rounded-xl bg-gradient-to-r ${banner.color} flex items-center justify-center`}
+                glowColor={banner.glowColor}
+                className="shrink-0 w-64 md:w-80 h-32 flex items-center justify-center p-4 cursor-default"
               >
-                <span className="font-orbitron font-bold text-sm text-white tracking-wider text-center px-4">
+                <span className="font-orbitron font-bold text-sm text-white tracking-wider text-center">
                   {banner.label}
                 </span>
-              </div>
+              </GlassCard>
             ))}
           </div>
         </div>

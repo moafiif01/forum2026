@@ -84,24 +84,15 @@
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, #D4A843, #F5D76E);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #D4A843;
   }
 
   .text-gradient-platinum {
-    background: linear-gradient(135deg, #E8E8E8, #B8B8B8, #E8E8E8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #E8E8E8;
   }
 
   .text-gradient-silver {
-    background: linear-gradient(135deg, #C0C0C0, #A0A0A0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #C0C0C0;
   }
 }
 

@@ -1,20 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import NeonButton from '@/components/NeonButton';
 
 interface StatItem {
   value: number;
-  suffix: string;
+  suffix?: string;
+  prefix?: string;
   label: string;
   decimals?: number;
 }
 
 const stats: StatItem[] = [
-  { value: 2, suffix: '', label: 'ÉDITIONS' },
-  { value: 52, suffix: '', label: 'ENTREPRISES PARTICIPANTES' },
-  { value: 500, suffix: '+', label: 'PARTICIPANTS PAR JOUR' },
+  { value: 2000, prefix: '+', label: 'VISITEURS (ÉDITION 2024)' },
+  { value: 52, suffix: '', label: 'ENTREPRISES PARTENAIRES' },
+  { value: 200, prefix: '~', label: 'RECRUTEURS SUR SITE' },
+  { value: 18, prefix: '+', label: 'PERSONNALITÉS OFFICIELLES' },
 ];
 
-function AnimatedCounter({ target, suffix = '', decimals = 0, inView }: { target: number; suffix?: string; decimals?: number; inView: boolean }) {
+function AnimatedCounter({ target, suffix = '', prefix = '', decimals = 0, inView }: { target: number; suffix?: string; prefix?: string; decimals?: number; inView: boolean }) {
   const [count, setCount] = useState(0);
   const countRef = useRef(0);
   const startTimeRef = useRef<number | null>(null);
@@ -43,6 +46,7 @@ function AnimatedCounter({ target, suffix = '', decimals = 0, inView }: { target
 
   return (
     <span>
+      {prefix}
       {decimals > 0 ? count.toFixed(decimals) : count}
       {suffix}
     </span>
@@ -73,7 +77,7 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-black py-16 md:py-24">
+    <section ref={sectionRef} className="relative bg-black section-padding">
       <div className="container-padding">
         <div ref={titleRef} className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left Content */}
@@ -95,6 +99,7 @@ export default function StatsSection() {
                     <AnimatedCounter
                       target={stat.value}
                       suffix={stat.suffix}
+                      prefix={stat.prefix}
                       decimals={stat.decimals || 0}
                       inView={inView}
                     />
@@ -106,9 +111,9 @@ export default function StatsSection() {
               ))}
             </div>
 
-            <button className="mt-10 px-8 py-3 rounded-full border border-white/20 font-montserrat text-xs tracking-[0.2em] text-white/70 hover:border-white/40 hover:text-white transition-all duration-300">
+            <NeonButton glowColor="cyan" className="mt-10 px-8 py-6 tracking-[0.2em]">
               EN SAVOIR PLUS
-            </button>
+            </NeonButton>
           </div>
 
           {/* Right - FE Logo */}
@@ -116,7 +121,7 @@ export default function StatsSection() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <img 
                 src="/forum%20logo%20white.png" 
-                alt="Forum EMI-Entreprises Logo" 
+                alt="Forum ENSAM-Rabat Logo" 
                 className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
               />
             </div>

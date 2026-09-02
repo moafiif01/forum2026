@@ -7,39 +7,45 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const timelineData = [
   {
-    year: 1980,
+    year: 1978,
     title: 'FONDATION DE L\'ENSET RABAT',
-    description: 'Création de l\'École Normale Supérieure de l\'Enseignement Technique.',
+    description: 'Fondation de l\'ENSET Rabat (Décret n° 2.78-455).',
     image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80',
   },
   {
-    year: 2010,
-    title: 'RATTACHEMNET À L\'UNIVERSITÉ',
-    description: 'L\'école intègre officiellement l\'Université Mohammed V.',
+    year: 2017,
+    title: '1ÈRE ÉDITION FORUM ENSET',
+    description: '28-29 Mars 2017 : 1ère Édition du Forum ENSET-Entreprises. (2017-2020 : Organisation régulière des journées d\'entretiens PFE par le comité pour faciliter l\'insertion professionnelle).',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
   },
   {
     year: 2020,
-    title: 'NAISSANCE DE L\'ENSAM RABAT',
-    description: 'L\'ENSET devient officiellement l\'ENSAM Rabat pour former des ingénieurs d\'État.',
+    title: 'MUTATION EN ENSAM RABAT',
+    description: '14 Mai 2020 : Mutation officielle en ENSAM Rabat (Décret n° 2.20.210) et restructuration de la gouvernance associative. (2020-2024 : Organisation régulière des journées d\'entretiens PFE par le comité).',
     image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80',
   },
   {
     year: 2024,
-    title: '1ÈRE ÉDITION DU FORUM',
-    description: 'Création du Forum Industriel et du Directoire Consultatif Industriel (DCI).',
+    title: '1ÈRE ÉDITION FORUM INDUSTRIEL',
+    description: '1-2 Octobre 2024 : 1ère Édition academico industrielle Modernisée du Forum Industriel de l\'ENSAM Rabat. Octobre 2024 : Création officielle du Directoire Consultatif Industriel (DCI) lors de la 1ère édition pour pérenniser le lien académie-industrie.',
     image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80',
   },
   {
-    year: 2026,
-    title: '2ÈME ÉDITION',
-    description: 'L\'Ingénieur au Cœur de la Transformation Industrielle. Rendez-vous les 13 et 14 Octobre 2026.',
+    year: 2025,
+    title: 'JOURNÉES D\'ENTRETIENS PFE',
+    description: 'Organisation des journées d\'entretiens PFE, consolidant le rôle du comité dans la gestion des recrutements de fin d\'études.',
     image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80',
+  },
+  {
+    year: 2026,
+    title: 'JOURNÉE ENTREPRISE PFA',
+    description: '25 Avril 2026 : Journée Entreprise PFA ( 1ère édition ) , dédiée aux projets de fin d\'année et aux rencontres ciblées entre étudiants et industriels.',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80',
   },
 ];
 
 export default function TimelineSection() {
-  const [activeYear, setActiveYear] = useState(1980);
+  const [activeYear, setActiveYear] = useState(1978);
   const contentRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const revealRef = useScrollReveal<HTMLDivElement>({ y: 40, duration: 1, children: true, stagger: 0.2 });
@@ -73,7 +79,7 @@ export default function TimelineSection() {
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: 'top 15%', // Pin slightly below top to accommodate navbar
+        start: 'top top', // Pin when the top of the section hits the top of the viewport
         end: '+=2000',    // Scroll distance for the animation
         pin: true,
         onUpdate: (self) => {
@@ -104,7 +110,7 @@ export default function TimelineSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative bg-black pt-0 pb-20 lg:pb-32">
+    <section ref={sectionRef} className="relative bg-black min-h-screen w-full flex flex-col justify-center py-20">
       <div ref={revealRef} className="container-padding">
         {/* Header */}
         <div className="text-center mb-16">
@@ -169,7 +175,7 @@ export default function TimelineSection() {
           >
             <div className="flex flex-col md:flex-row h-full">
               <div className="p-8 md:p-10 flex-1 flex flex-col justify-center relative z-20 bg-black/40 backdrop-blur-sm">
-                <span className="animate-element font-orbitron font-black text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-pink to-purple glow-pink mb-2 inline-block">
+                <span className="animate-element font-orbitron font-black text-5xl md:text-6xl text-pink glow-pink mb-2 inline-block">
                   {activeData.year}
                 </span>
                 <h3 className="animate-element font-orbitron font-bold text-xl md:text-2xl text-white mt-4 mb-4 tracking-wide uppercase">

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-02T16:40:05",
+  "title": "Design System: Forum ENSAM-RABAT",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Neon Pink", "canonical": "#FF1493", "tonalRamp": ["#330018", "#660030", "#990048", "#cc0060", "#ff1493", "#ff66bd", "#ffb3df", "#ffe6f4"] },
+      "secondary": { "role": "secondary", "displayName": "Electric Cyan", "canonical": "#00E5FF", "tonalRamp": ["#002b33", "#005a66", "#008a99", "#00b9cc", "#00e5ff", "#66eeff", "#b3f6ff", "#e6fbff"] },
+      "tertiary": { "role": "tertiary", "displayName": "Industrial Gold", "canonical": "#D4A843", "tonalRamp": ["#2b220d", "#55431a", "#806528", "#aa8635", "#d4a843", "#e0c27a", "#eadcb0", "#f8f3e5"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines only." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles and primary structural headers." },
+      "body": { "displayName": "Body", "purpose": "Descriptive text and paragraphs." }
+    },
+    "shadows": [
+      { "name": "glow-pink", "value": "0 0 20px rgba(255,20,147,0.3)", "purpose": "Ambient lift under primary active elements." },
+      { "name": "glow-cyan", "value": "0 0 20px rgba(0,229,255,0.3)", "purpose": "Ambient lift under secondary active elements." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Glass Card",
+      "kind": "card",
+      "refersTo": "glass-card",
+      "description": "Translucent containers for primary content.",
+      "html": "<div class="ds-glass-card"><h3>Schedule</h3><p>Content goes here.</p></div>",
+      "css": ".ds-glass-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 24px; color: white; transition: all 0.3s ease; font-family: 'Montserrat', sans-serif; } .ds-glass-card h3 { font-family: 'Orbitron', sans-serif; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0; } .ds-glass-card:hover { border-color: rgba(255,20,147,0.5); box-shadow: 0 0 20px rgba(255,20,147,0.3); }"
+    },
+    {
+      "name": "Glass Pill",
+      "kind": "chip",
+      "refersTo": "glass-pill",
+      "description": "Small translucent tags for dates or metadata.",
+      "html": "<span class="ds-glass-pill">13 - 14 Oct 2026</span>",
+      "css": ".ds-glass-pill { background: rgba(0,0,0,0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); border-radius: 9999px; padding: 12px 24px; color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The High-Tech Innovator",
+    "overview": "Bold, dynamic, and unapologetically modern. Driven by high contrast and glowing neon accents. The visual world uses deep blacks layered with transluscent glass surfaces to create an immersive, futuristic atmosphere that positions the forum at the cutting edge of industrial transformation.",
+    "keyCharacteristics": [
+      "High-contrast dark mode foundation.",
+      "Neon glow effects to establish hierarchy and focus.",
+      "Architectural, futuristic typography for all headings.",
+      "Glassmorphism for structural containers."
+    ],
+    "rules": [
+      { "name": "The Neon Restraint Rule", "body": "Neon colors must be used against black or very dark backgrounds to maximize contrast. They should glow rather than simply exist as flat colors.", "section": "colors" },
+      { "name": "The Tech-Type Rule", "body": "Headings (Orbitron) should always be uppercase and use wide tracking to emphasize the technical, engineered feel.", "section": "typography" },
+      { "name": "The Ambient Lift Rule", "body": "Elements never cast a traditional black drop-shadow. Instead, they emit colored ambient light to separate themselves from the black void.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Orbitron for headings and numbers to maintain the engineered aesthetic.",
+      "Do wrap cards and floating UI elements in glassmorphism (translucent backgrounds + backdrop blur + subtle white borders).",
+      "Do leverage the absolute black background to make neon accents pop."
+    ],
+    "donts": [
+      "Don't use solid gray or white backgrounds; stick to absolute black and translucent overlays.",
+      "Don't use traditional black drop shadows; use colored neon glows to indicate elevation or active states.",
+      "Don't use gradient text for headings (prefer solid glowing colors) to maintain premium legibility."
+    ]
+  }
+}

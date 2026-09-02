@@ -1,6 +1,7 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeader from '@/components/SectionHeader';
-import { Settings, Box, Cpu, Cog, Zap, Factory, Plane, Brain, Activity } from 'lucide-react';
+import { Cpu, Cog, Zap, Factory, Brain, Activity } from 'lucide-react';
+import GlassCard from '@/components/GlassCard';
 
 interface Filiere {
   title: string;
@@ -122,9 +123,10 @@ export default function Ecole() {
 
           <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filieres.map((filiere) => (
-              <div
+              <GlassCard
                 key={filiere.title}
-                className="bg-[#111] rounded-2xl p-6 md:p-8 border border-white/5 hover:border-purple/30 hover:shadow-[0_0_20px_rgba(156,39,176,0.1)] transition-all duration-300 flex flex-col min-h-[280px]"
+                glowColor="purple"
+                className="p-6 md:p-8 flex flex-col min-h-[280px]"
               >
                 <h3 className="font-montserrat font-bold text-sm text-white tracking-wider mb-4">
                   {filiere.title}
@@ -148,7 +150,7 @@ export default function Ecole() {
                     {filiere.icon}
                   </div>
                 </div>
-              </div>
+              </GlassCard>
             ))}
           </div>
         </div>
