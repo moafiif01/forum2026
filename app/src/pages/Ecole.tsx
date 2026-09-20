@@ -40,19 +40,16 @@ export default function Ecole() {
       </section>
 
       {/* Hero Video */}
-      <section className="relative min-h-[120vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/school_video.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-slate-50/40 to-slate-50" />
-        </div>
+      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/school_video.mp4" type="video/mp4" />
+        </video>
       </section>
 
       {/* Intro Description */}
