@@ -14,7 +14,7 @@ export default function HeroSection() {  return (
           >
             <source src="/Forum Ensam Rabat.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-50/70 to-slate-50/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 via-slate-50/70 to-slate-50" />
         </div>
       </div>
       {/* Hero Content */}

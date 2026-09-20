@@ -36,16 +36,8 @@ export default function Navbar() {
       >
         <div className="container-padding flex items-center justify-between h-[72px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src="/forum%20logo%20white.png" alt="Forum Industriel ENSAM-Rabat Logo" className="w-12 h-12 object-contain invert opacity-90" />
-            <div className="hidden sm:block">
-              <div className="font-orbitron font-bold text-sm text-navy leading-tight tracking-wider">
-                FORUM
-              </div>
-              <div className="font-montserrat text-[9px] text-navy/70 tracking-[0.2em] leading-tight">
-                ENSAM-RABAT
-              </div>
-            </div>
+          <Link to="/" className="flex items-center shrink-0">
+            <img src="/forum%20logo%20white.png" alt="Forum Industriel ENSAM-Rabat Logo" className="h-12 md:h-14 object-contain invert opacity-90" />
           </Link>
 
           {/* Desktop Nav */}
