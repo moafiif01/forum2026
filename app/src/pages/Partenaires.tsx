@@ -10,27 +10,27 @@ interface PartnerTier {
 const tiers: PartnerTier[] = [
   {
     name: 'OFFICIEL',
-    gradientClass: 'text-gradient-gold',
+    gradientClass: 'text-teal',
     partners: ['Banque Populaire', 'Attijariwafa Bank', 'Capgemini', 'Capgemini Engineering', 'CMS'],
   },
   {
     name: 'PLATINIUM',
-    gradientClass: 'text-gradient-platinum',
+    gradientClass: 'text-navy',
     partners: ['CDM', 'BMCI', 'Maghreb Steel', 'SGM', 'SOGEA', 'TAQA Morocco'],
   },
   {
     name: 'GOLD',
-    gradientClass: 'text-gradient-gold',
+    gradientClass: 'text-teal',
     partners: ['Société Générale', 'CFG Bank', 'EMB', 'ENGIE', 'UM6P', 'JESA', 'LafargeHolcim', 'La Marocaine Vie', 'Lesieur Cristal', 'Managem', 'Masen', 'NAREVA', 'SNTL', 'Al Omrane'],
   },
   {
     name: 'SILVER+',
-    gradientClass: 'text-gradient-silver',
+    gradientClass: 'text-navy',
     partners: ['Al Wataniya Bank', 'BAG', 'UGGC', 'BUTEC', 'Clemessy', 'Crouzet', 'Portnet', 'TGCC', 'Total Energies'],
   },
   {
     name: 'SILVER',
-    gradientClass: 'text-gradient-silver',
+    gradientClass: 'text-navy',
     partners: ['BIM', 'OMCo'],
   },
 ];
@@ -43,10 +43,10 @@ function CrystalBackground() {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse at 20% 30%, rgba(100,50,200,0.15) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 70%, rgba(0,200,200,0.1) 0%, transparent 50%),
-            radial-gradient(ellipse at 50% 50%, rgba(200,0,150,0.08) 0%, transparent 60%),
-            linear-gradient(135deg, #0a0010 0%, #000510 30%, #001510 60%, #0a0010 100%)
+            radial-gradient(ellipse at 20% 30%, rgba(30,45,74,0.05) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 70%, rgba(105,161,184,0.08) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 50%, rgba(105,161,184,0.05) 0%, transparent 60%),
+            linear-gradient(135deg, #f8fafc 0%, #f1f5f9 30%, #e2e8f0 60%, #f8fafc 100%)
           `,
         }}
       />
@@ -104,10 +104,10 @@ export default function Partenaires() {
       <div className="relative z-10 pt-32 pb-20">
         {/* Hero */}
         <div className="container-padding text-center mb-20">
-          <h1 className="font-orbitron font-black text-4xl md:text-6xl lg:text-7xl text-white tracking-[0.05em] mb-4">
+          <h1 className="font-orbitron font-black text-4xl md:text-6xl lg:text-7xl text-navy tracking-[0.05em] mb-4">
             NOS PARTENAIRES
           </h1>
-          <p className="font-montserrat text-sm md:text-base text-pink tracking-[0.3em] uppercase">
+          <p className="font-montserrat text-sm md:text-base text-teal font-bold tracking-[0.3em] uppercase">
             Ensemble, nous bâtissons l'avenir
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function Partenaires() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className="glass-card rounded-2xl p-6 md:p-10 mb-8"
+              className="glass-card bg-white/80 border-navy/10 rounded-2xl p-6 md:p-10 mb-8 shadow-sm"
             >
               <div className="flex flex-col md:flex-row gap-6 md:gap-10">
                 {/* Tier Label */}

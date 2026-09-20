@@ -38,15 +38,13 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        navy: "#1E2D4A",
+        teal: "#69A1B8",
         gold: "#D4A843",
-        pink: "#FF1493",
-        magenta: "#E91E8C",
-        purple: "#9C27B0",
-        cyan: "#00E5FF",
         "accent-blue": "#2979FF",
       },
       fontFamily: {
-        orbitron: ['Orbitron', 'sans-serif'],
+        orbitron: ['Montserrat', 'sans-serif'], // Remapped to Montserrat for light theme
         montserrat: ['Montserrat', 'sans-serif'],
         amiri: ['Amiri', 'serif'],
       },
@@ -59,9 +57,9 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        glow: "0 0 30px rgba(255,20,147,0.15), inset 0 1px 0 rgba(255,255,255,0.05)",
-        "glow-pink": "0 0 20px rgba(255,20,147,0.3)",
-        "glow-cyan": "0 0 20px rgba(0,229,255,0.3)",
+        "soft": "0 10px 40px -10px rgba(30,45,74,0.1)",
+        "glow-pink": "0 10px 30px -10px rgba(30,45,74,0.15)", // Remapped to soft shadow
+        "glow-cyan": "0 10px 30px -10px rgba(30,45,74,0.15)", // Remapped to soft shadow
       },
       keyframes: {
         "accordion-down": {

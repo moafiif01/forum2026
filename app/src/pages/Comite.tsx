@@ -24,71 +24,18 @@ const committee: CommitteeMember[] = [
 
 function CosmicBackground() {
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden">
+    <div className="absolute inset-0 z-0 overflow-hidden bg-slate-50">
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-40"
         style={{
           background: `
-            radial-gradient(ellipse at 30% 20%, rgba(255,20,147,0.12) 0%, transparent 40%),
-            radial-gradient(ellipse at 70% 80%, rgba(156,39,176,0.1) 0%, transparent 40%),
-            radial-gradient(ellipse at 50% 50%, rgba(80,0,60,0.15) 0%, transparent 50%),
-            linear-gradient(180deg, #0a0008 0%, #050005 50%, #08000a 100%)
+            radial-gradient(ellipse at 30% 20%, rgba(105,161,184,0.15) 0%, transparent 40%),
+            radial-gradient(ellipse at 70% 80%, rgba(30,45,74,0.1) 0%, transparent 40%),
+            radial-gradient(ellipse at 50% 50%, rgba(105,161,184,0.1) 0%, transparent 50%),
+            linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)
           `,
         }}
       />
-      
-      {/* Floating pink crystals */}
-      {[...Array(15)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute animate-float"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 6}s`,
-            animationDuration: `${5 + Math.random() * 5}s`,
-          }}
-        >
-          <svg
-            width={15 + Math.random() * 35}
-            height={15 + Math.random() * 35}
-            viewBox="0 0 40 40"
-            fill="none"
-            style={{
-              filter: `drop-shadow(0 0 ${10 + Math.random() * 15}px rgba(255,20,147,0.5))`,
-              opacity: 0.2 + Math.random() * 0.3,
-            }}
-          >
-            <polygon
-              points="20,0 38,15 32,38 8,38 2,15"
-              fill="rgba(255,20,147,0.1)"
-              stroke="rgba(255,20,147,0.4)"
-              strokeWidth="1"
-            />
-            <polygon
-              points="20,5 33,16 28,34 12,34 7,16"
-              fill="rgba(233,30,140,0.08)"
-            />
-          </svg>
-        </div>
-      ))}
-
-      {/* Stars */}
-      {[...Array(30)].map((_, i) => (
-        <div
-          key={`star-${i}`}
-          className="absolute rounded-full bg-white animate-pulse"
-          style={{
-            width: `${1 + Math.random() * 2}px`,
-            height: `${1 + Math.random() * 2}px`,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            opacity: 0.2 + Math.random() * 0.5,
-            animationDelay: `${Math.random() * 3}s`,
-            animationDuration: `${2 + Math.random() * 3}s`,
-          }}
-        />
-      ))}
     </div>
   );
 }
@@ -96,41 +43,41 @@ function CosmicBackground() {
 function MemberCard({ member, index }: { member: CommitteeMember; index: number }) {
   return (
     <div
-      className={`gradient-border-pink group ${member.isLead ? 'md:col-span-1' : ''}`}
+      className={`border border-navy/10 rounded-xl bg-white shadow-sm overflow-hidden group ${member.isLead ? 'md:col-span-1' : ''}`}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       <div className="overflow-hidden">
         {/* Photo placeholder */}
-        <div className="relative h-64 md:h-72 overflow-hidden bg-gradient-to-b from-[#1a0a15] to-[#0d050a]">
+        <div className="relative h-64 md:h-72 overflow-hidden bg-slate-100">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink/20 to-purple/20 flex items-center justify-center border border-pink/20">
-              <span className="font-orbitron font-bold text-2xl text-pink/60">
+            <div className="w-24 h-24 rounded-full bg-teal/10 flex items-center justify-center border border-teal/20">
+              <span className="font-orbitron font-bold text-2xl text-teal/80">
                 {member.name.charAt(0)}
               </span>
             </div>
           </div>
           {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
         </div>
 
         {/* Info */}
         <div className="p-5">
-          <h4 className="font-orbitron font-bold text-sm text-white tracking-wider mb-1">
+          <h4 className="font-orbitron font-bold text-sm text-navy tracking-wider mb-1">
             {member.name}
           </h4>
-          <p className="font-montserrat text-[11px] text-pink tracking-wider uppercase mb-1">
+          <p className="font-montserrat text-[11px] text-teal font-bold tracking-wider uppercase mb-1">
             {member.role}
           </p>
-          <p className="font-montserrat text-[10px] text-white/40 tracking-wider">
+          <p className="font-montserrat text-[10px] text-navy/60 font-medium tracking-wider">
             {member.department}
           </p>
           
           {/* Social icons */}
           <div className="flex gap-3 mt-4">
-            <button className="text-white/30 hover:text-pink transition-colors">
+            <button className="text-navy/40 hover:text-teal transition-colors">
               <Linkedin size={16} />
             </button>
-            <button className="text-white/30 hover:text-pink transition-colors">
+            <button className="text-navy/40 hover:text-teal transition-colors">
               <Mail size={16} />
             </button>
           </div>
@@ -152,31 +99,31 @@ export default function Comite() {
       <div className="relative z-10 pt-32 pb-20">
         {/* Hero */}
         <div className="container-padding text-center mb-12">
-          <h1 className="font-orbitron font-black text-4xl md:text-6xl text-white tracking-[0.05em]">
+          <h1 className="font-orbitron font-black text-4xl md:text-6xl text-navy tracking-[0.05em]">
             LE COMITÉ DE LA
           </h1>
-          <p className="font-orbitron font-bold text-lg md:text-2xl text-pink glow-pink tracking-[0.15em] mt-2">
+          <p className="font-orbitron font-bold text-lg md:text-2xl text-teal tracking-[0.15em] mt-2">
             XXXIIÈME ÉDITION
           </p>
         </div>
 
         {/* Group Photo */}
         <div className="container-padding max-w-4xl mx-auto mb-20">
-          <div className="relative rounded-2xl overflow-hidden border border-pink/20 shadow-[0_0_30px_rgba(255,20,147,0.1)]">
-            <div className="aspect-video bg-gradient-to-br from-[#1a0a15] via-[#0d050a] to-[#1a0a15] flex items-center justify-center">
+          <div className="relative rounded-2xl overflow-hidden border border-navy/10 shadow-sm bg-white p-2">
+            <div className="aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-slate-100 via-white to-slate-100 flex items-center justify-center">
               <div className="text-center">
                 <div className="flex justify-center gap-4 mb-6">
                   {[...Array(6)].map((_, i) => (
                     <div 
                       key={i} 
-                      className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-pink/20 to-purple/20 border border-pink/20"
+                      className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-teal/10 to-navy/10 border border-teal/20"
                     />
                   ))}
                 </div>
-                <p className="font-orbitron font-bold text-lg md:text-xl text-white/80 tracking-wider">
+                <p className="font-orbitron font-bold text-lg md:text-xl text-navy/80 tracking-wider">
                   UN COMITÉ PRODIGE,
                 </p>
-                <p className="font-orbitron font-bold text-lg md:text-xl text-pink tracking-wider">
+                <p className="font-orbitron font-bold text-lg md:text-xl text-teal tracking-wider">
                   POUR UN FORUM D'EXCEPTION
                 </p>
               </div>

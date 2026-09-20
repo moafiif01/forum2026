@@ -11,10 +11,12 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: 2000, prefix: '+', label: 'VISITEURS (ÉDITION 2024)' },
+  { value: 2000, prefix: '+', label: 'VISITEURS' },
   { value: 52, suffix: '', label: 'ENTREPRISES PARTENAIRES' },
   { value: 200, prefix: '~', label: 'RECRUTEURS SUR SITE' },
   { value: 18, prefix: '+', label: 'PERSONNALITÉS OFFICIELLES' },
+  { value: 13000, prefix: '+', label: 'VUES SUR LES RÉSEAUX SOCIAUX' },
+  { value: 500, prefix: '+', label: 'CV COLLECTÉS' },
 ];
 
 function AnimatedCounter({ target, suffix = '', prefix = '', decimals = 0, inView }: { target: number; suffix?: string; prefix?: string; decimals?: number; inView: boolean }) {
@@ -77,25 +79,23 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-black section-padding">
+    <section ref={sectionRef} className="relative bg-white section-padding">
       <div className="container-padding">
         <div ref={titleRef} className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left Content */}
           <div className="flex-1">
-            <p className="font-montserrat text-base text-white mb-1">
-              Le <span className="font-bold">Forum ENSAM-Rabat</span>
+            <p className="font-montserrat text-base text-navy mb-1">
+              <span className="font-bold text-xl uppercase text-teal">L'ÉDITION 2024 EN CHIFFRES</span>
             </p>
-            <p className="font-montserrat text-base text-white/70 mb-10">
-              <span className="font-bold text-white">Plus grand</span> Forum<br />
-              de type École-Entreprises<br />
-              <span className="font-bold text-white">au Maroc</span>
+            <p className="font-montserrat text-sm md:text-base text-navy/70 mb-10 font-medium">
+              Des chiffres qui témoignent de la capacité du Forum à mobiliser l’écosystème industriel et académique.
             </p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-x-8 gap-y-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center md:text-left">
-                  <div className="font-orbitron font-bold text-3xl md:text-4xl lg:text-5xl text-cyan glow-cyan mb-1">
+                  <div className="font-orbitron font-bold text-3xl md:text-4xl lg:text-5xl text-navy mb-1">
                     <AnimatedCounter
                       target={stat.value}
                       suffix={stat.suffix}
@@ -104,7 +104,7 @@ export default function StatsSection() {
                       inView={inView}
                     />
                   </div>
-                  <div className="font-montserrat text-[10px] md:text-xs text-white/50 tracking-[0.2em] uppercase">
+                  <div className="font-montserrat text-[10px] md:text-xs text-teal font-bold tracking-[0.2em] uppercase">
                     {stat.label}
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function StatsSection() {
               <img 
                 src="/forum%20logo%20white.png" 
                 alt="Forum ENSAM-Rabat Logo" 
-                className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
+                className="w-full h-full object-contain invert opacity-90" 
               />
             </div>
           </div>

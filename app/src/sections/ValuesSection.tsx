@@ -14,11 +14,11 @@ interface ValueTab {
 
 const valuesData: ValueTab[] = [
   {
-    id: 'serment',
-    title: 'Serment',
-    subtitle: 'Un engagement profond',
-    tagline: '',
-    description: "Avant même que le Forum EMI-Entreprises ne prenne vie, il y a eu un moment silencieux, solennel, où chaque membre de ce comité a choisi de donner plus que son temps et ses compétences. Il a donné sa parole. Ce serment tacite, prononcé dans l'exigence et la confiance mutuelle, est le ciment invisible qui transforme un groupe d'individus d'exception en une alliance indéfectible. Car ce qui unit ce comité n'est pas une simple collaboration, c'est un engagement profond, forgé comme on forge l'acier : dans la pression, dans la chaleur, et dans la volonté commune de ne jamais faillir.",
+    id: 'echanger',
+    title: 'Échanger',
+    subtitle: 'Dialogue de haut niveau',
+    tagline: 'Idées · Expériences · Transformations',
+    description: "Créer un espace de dialogue de haut niveau entre étudiants, industriels, experts, chercheurs et décideurs. Le Forum favorise la circulation des idées, le partage d'expériences et la compréhension des transformations qui redéfinissent aujourd'hui l'industrie et l'ingénierie.",
     quote: '',
     images: [
       'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80',
@@ -26,24 +26,24 @@ const valuesData: ValueTab[] = [
     ],
   },
   {
-    id: 'elite',
-    title: 'Élite',
-    subtitle: 'Un cercle que l\'on mérite, jamais que l\'on choisit',
-    tagline: 'Un standard · Une exigence · Un héritage',
-    description: "Le Forum EMI-Entreprises n'est pas le fruit du hasard. Il naît d'un comité qui refuse l'ordinaire, qui repousse chaque limite, qui grave chaque édition dans la mémoire collective. Être ici, c'est appartenir à un cercle où l'exigence est la seule monnaie qui compte.",
-    quote: '« L\'excellence n\'est pas un point d\'arrivée. C\'est un standard de départ. »',
+    id: 'recruter',
+    title: 'Recruter',
+    subtitle: 'Mise en relation des talents',
+    tagline: 'Stages · PFE · Opportunités',
+    description: "Mettre en relation les entreprises avec des profils qualifiés à la recherche de stages, PFE et opportunités professionnelles. Le Forum constitue un espace privilégié pour rencontrer directement les talents, identifier des profils et créer de nouvelles opportunités de collaboration.",
+    quote: '',
     images: [
       'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
       'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80',
     ],
   },
   {
-    id: 'prestige',
-    title: 'Prestige',
-    subtitle: 'Une empreinte indélébile',
-    tagline: 'Chaque détail · Chaque instant · Une signature',
-    description: "Le prestige ne se proclame pas, il se ressent. Dans chaque détail orchestré, chaque rencontre pensée, chaque instant vécu au sein du Forum EMI-Entreprises, il y a une promesse : celle de laisser une empreinte indélébile sur ceux qui ont eu le privilège d'y être.",
-    quote: '« Le luxe, c\'est quand le moindre détail porte une signature. »',
+    id: 'coconstruire',
+    title: 'Co-Construire',
+    subtitle: 'De nouvelles collaborations',
+    tagline: 'Formation · Innovation · Recherche',
+    description: "Faire émerger de nouvelles collaborations entre l'ENSAM Rabat et les entreprises autour des enjeux de formation, d'innovation, de recherche et de transfert technologique. L'objectif est de faire du dialogue Académie–Industrie un véritable levier de transformation durable. La première édition avait notamment permis d'identifier la recherche commune, le transfert technologique et l'adaptation des formations comme des axes structurants de collaboration.",
+    quote: '',
     images: [
       'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80',
       'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80',
@@ -52,7 +52,7 @@ const valuesData: ValueTab[] = [
 ];
 
 export default function ValuesSection() {
-  const [activeTab, setActiveTab] = useState('serment');
+  const [activeTab, setActiveTab] = useState('echanger');
   const contentRef = useRef<HTMLDivElement>(null);
   const activeValue = valuesData.find((v) => v.id === activeTab) || valuesData[0];
 
@@ -67,11 +67,11 @@ export default function ValuesSection() {
   }, [activeTab]);
 
   return (
-    <section className="relative bg-black section-padding">
+    <section className="relative bg-slate-50 section-padding">
       <div className="container-padding">
         <SectionHeader
-          title="NOS VALEURS"
-          subtitle="LE SOCLE DE NOTRE LÉGENDE"
+          title="LES 3 PILIERS DU FORUM"
+          subtitle="ÉCHANGER · RECRUTER · CO-CONSTRUIRE"
           glowColor="pink"
         />
 
@@ -83,8 +83,8 @@ export default function ValuesSection() {
               onClick={() => setActiveTab(tab.id)}
               className={`font-montserrat text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 pb-2 border-b-2 ${
                 activeTab === tab.id
-                  ? 'text-gold border-gold'
-                  : 'text-white/40 border-transparent hover:text-white/60'
+                  ? 'text-teal border-teal font-bold'
+                  : 'text-navy/40 border-transparent hover:text-navy/70 font-medium'
               }`}
             >
               {tab.title}
@@ -98,7 +98,7 @@ export default function ValuesSection() {
           className="glass-card rounded-2xl overflow-hidden"
         >
           {/* Images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-100">
             {activeValue.images.map((img, i) => (
               <div key={i} className="relative h-48 md:h-64 overflow-hidden">
                 <img
@@ -106,13 +106,13 @@ export default function ValuesSection() {
                   alt={activeValue.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent" />
                 {i === 0 && (
                   <div className="absolute bottom-4 left-4">
-                    <h3 className="font-orbitron font-bold text-2xl md:text-3xl text-gold">
+                    <h3 className="font-orbitron font-bold text-2xl md:text-3xl text-navy">
                       {activeValue.title}
                     </h3>
-                    <p className="font-montserrat text-xs text-white/60 tracking-wider uppercase mt-1">
+                    <p className="font-montserrat text-xs font-bold text-teal tracking-wider uppercase mt-1">
                       {activeValue.subtitle}
                     </p>
                   </div>
@@ -124,15 +124,15 @@ export default function ValuesSection() {
           {/* Text Content */}
           <div className="p-6 md:p-10">
             {activeValue.tagline && (
-              <p className="font-montserrat text-xs text-white/50 tracking-[0.3em] uppercase mb-4">
+              <p className="font-montserrat text-xs font-bold text-teal tracking-[0.3em] uppercase mb-4">
                 {activeValue.tagline}
               </p>
             )}
-            <p className="font-montserrat text-sm md:text-base text-white/70 leading-relaxed mb-6">
+            <p className="font-montserrat text-sm md:text-base text-navy/80 font-medium leading-relaxed mb-6">
               {activeValue.description}
             </p>
             {activeValue.quote && (
-              <p className="font-montserrat text-sm md:text-base text-white/50 italic">
+              <p className="font-montserrat text-sm md:text-base text-navy/60 italic">
                 {activeValue.quote}
               </p>
             )}

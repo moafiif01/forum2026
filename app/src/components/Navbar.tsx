@@ -3,12 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { label: 'LE FORUM', path: '/' },
-  { label: 'NOS PARTENAIRES', path: '/partenaires' },
-  { label: 'LE COMITÉ', path: '/comite' },
-  { label: "L'ÉCOLE", path: '/ecole' },
-  { label: 'SERVICES', path: '/services' },
-  { label: 'MÉDIATHÈQUE', path: '/mediatheque' },
+  { label: 'FORUM', path: '/' },
+  { label: 'PROGRAMME', path: '/programme' },
+  { label: 'ENSAM RABAT', path: '/ecole' },
+  { label: 'PARTENAIRES', path: '/partenaires' },
+  { label: 'COMITÉ', path: '/comite' },
 ];
 
 export default function Navbar() {
@@ -31,19 +30,19 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-black/80 backdrop-blur-xl border-b border-white/5'
+            ? 'bg-white/90 backdrop-blur-xl border-b border-navy/10 shadow-sm'
             : 'bg-transparent'
         }`}
       >
         <div className="container-padding flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src="/forum%20logo%20white.png" alt="Forum EMI-Entreprises Logo" className="w-12 h-12 object-contain" />
+            <img src="/forum%20logo%20white.png" alt="Forum Industriel ENSAM-Rabat Logo" className="w-12 h-12 object-contain invert opacity-90" />
             <div className="hidden sm:block">
-              <div className="font-orbitron font-bold text-sm text-white leading-tight tracking-wider">
+              <div className="font-orbitron font-bold text-sm text-navy leading-tight tracking-wider">
                 FORUM
               </div>
-              <div className="font-montserrat text-[9px] text-white/70 tracking-[0.2em] leading-tight">
+              <div className="font-montserrat text-[9px] text-navy/70 tracking-[0.2em] leading-tight">
                 ENSAM-RABAT
               </div>
             </div>
@@ -55,10 +54,10 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-montserrat text-[11px] font-medium tracking-[0.15em] transition-colors duration-300 ${
+                className={`font-montserrat text-[11px] font-bold tracking-[0.15em] transition-colors duration-300 ${
                   location.pathname === link.path
-                    ? 'text-pink'
-                    : 'text-white/70 hover:text-white'
+                    ? 'text-teal'
+                    : 'text-navy/70 hover:text-navy'
                 }`}
               >
                 {link.label}
@@ -68,14 +67,14 @@ export default function Navbar() {
 
           {/* INFOMÉDIAIRE CTA */}
           <div className="hidden lg:block">
-            <span className="font-montserrat text-sm font-bold text-pink glow-pink tracking-wider">
+            <span className="font-montserrat text-sm font-bold text-teal tracking-wider">
               INFOMÉDIAIRE
             </span>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-navy p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,7 +84,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-xl transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-xl transition-all duration-500 lg:hidden ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -94,16 +93,16 @@ export default function Navbar() {
             <Link
               key={link.path}
               to={link.path}
-              className={`font-orbitron text-xl tracking-[0.1em] transition-colors duration-300 ${
+              className={`font-orbitron font-bold text-xl tracking-[0.1em] transition-colors duration-300 ${
                 location.pathname === link.path
-                  ? 'text-pink'
-                  : 'text-white/70 hover:text-white'
+                  ? 'text-teal'
+                  : 'text-navy/70 hover:text-navy'
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <span className="font-montserrat text-lg font-bold text-pink glow-pink tracking-wider mt-4">
+          <span className="font-montserrat text-lg font-bold text-teal tracking-wider mt-4">
             INFOMÉDIAIRE
           </span>
         </div>

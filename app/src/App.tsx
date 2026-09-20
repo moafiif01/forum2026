@@ -2,11 +2,10 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import PageLayout from './components/PageLayout';
 import Home from './pages/Home';
+import Programme from './pages/Programme';
 import Partenaires from './pages/Partenaires';
 import Comite from './pages/Comite';
 import Ecole from './pages/Ecole';
-import Services from './pages/Services';
-import Mediatheque from './pages/Mediatheque';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,11 +22,10 @@ export default function App() {
       <Routes>
         <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/programme" element={<Programme />} />
+          <Route path="/ecole" element={<Ecole />} />
           <Route path="/partenaires" element={<Partenaires />} />
           <Route path="/comite" element={<Comite />} />
-          <Route path="/ecole" element={<Ecole />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/mediatheque" element={<Mediatheque />} />
         </Route>
       </Routes>
     </>

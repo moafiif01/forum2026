@@ -11,10 +11,10 @@ export default function NeonButton({ children, className, glowColor = 'pink', ..
   return (
     <Button
       className={cn(
-        "relative rounded-none border font-orbitron font-bold tracking-wider overflow-hidden transition-all duration-300",
-        glowColor === 'pink' && "border-pink bg-pink/10 text-white hover:bg-pink/20 hover:shadow-glow-pink",
-        glowColor === 'cyan' && "border-cyan bg-cyan/10 text-white hover:bg-cyan/20 hover:shadow-glow-cyan",
-        glowColor === 'purple' && "border-purple bg-purple/10 text-white hover:bg-purple/20 hover:shadow-[0_0_20px_rgba(156,39,176,0.3)]",
+        "relative rounded-md font-orbitron font-bold tracking-wider overflow-hidden transition-all duration-300",
+        glowColor === 'pink' && "bg-navy text-white hover:bg-navy/90 hover:shadow-soft",
+        glowColor === 'cyan' && "bg-teal text-white hover:bg-teal/90 hover:shadow-soft",
+        glowColor === 'purple' && "bg-accent-blue text-white hover:bg-accent-blue/90 hover:shadow-soft",
         className
       )}
       {...props}
