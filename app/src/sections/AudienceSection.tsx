@@ -56,7 +56,7 @@ export default function AudienceSection() {
           {audienceStats.map((stat, index) => (
             <div
               key={index}
-              ref={(el) => (cardsRef.current[index] = el)}
+              ref={(el) => { cardsRef.current[index] = el; }}
               className="glass-card bg-slate-50 p-6 flex flex-col items-center justify-center text-center rounded-xl border border-navy/10 hover:border-teal/30 hover:shadow-soft transition-all duration-300"
             >
               <h3 className="font-orbitron font-bold text-xl md:text-2xl text-teal mb-2">
