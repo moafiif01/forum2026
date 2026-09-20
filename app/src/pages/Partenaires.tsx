@@ -154,14 +154,12 @@ export default function Partenaires() {
             subtitle=""
             glowColor="gold"
           />
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-6 md:p-10">
-            <div className="flex flex-wrap justify-center gap-3">
-              {tiers.flatMap(t => t.partners).map((p, i) => (
-                <div key={i} className="px-3 py-1.5 bg-gray-100 rounded-md">
-                  <span className="font-montserrat text-[10px] text-gray-600 font-medium">{p}</span>
-                </div>
-              ))}
-            </div>
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-navy/10">
+            <img 
+              src="/images/nousAfaitConfiance.jpeg" 
+              alt="Ils nous ont fait confiance" 
+              className="w-full h-auto object-cover rounded-xl"
+            />
           </div>
         </div>
       </div>
