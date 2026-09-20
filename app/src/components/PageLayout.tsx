@@ -5,7 +5,7 @@ import SponsoringFAB from './SponsoringFAB';
 
 export default function PageLayout() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-slate-50 text-navy">
       <Navbar />
       <main>
         <Outlet />
