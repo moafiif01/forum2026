@@ -3,19 +3,17 @@ import GlassPill from '@/components/GlassPill';
 export default function HeroSection() {  return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden py-32">
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="sticky top-0 h-screen w-full">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          >
-            <source src="/Forum Ensam Rabat.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 via-slate-50/70 to-slate-50" />
-        </div>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        >
+          <source src="/Forum Ensam Rabat.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 via-slate-50/70 to-slate-50" />
       </div>
       {/* Hero Content */}
       <div className="relative z-10 container-padding w-full max-w-5xl mx-auto flex flex-col items-center justify-center text-center">
