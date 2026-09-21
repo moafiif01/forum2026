@@ -19,8 +19,8 @@ const bureauData: CommitteeSection[] = [
   {
     title: 'LE BUREAU EXÉCUTIF',
     members: [
-      { name: 'Nihale Fenzari', role: 'Présidente', department: 'Ingénierie automobile et aéronautique', email: 'Nihale_Fenzari@um5.ac.ma', linkedin: 'https://linkedin.com', image: '/images/bureau/Nihale Fenzari.jpg' },
       { name: 'Rim Jouilil', role: 'Vice-présidente', department: 'Génie mécanique', email: 'jouililrim.ensamr@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau/Rim Jouilil.jpg' },
+      { name: 'Nihale Fenzari', role: 'Présidente', department: 'Ingénierie automobile et aéronautique', email: 'Nihale_Fenzari@um5.ac.ma', linkedin: 'https://linkedin.com', image: '/images/bureau/Nihale Fenzari.jpg' },
       { name: 'Malak Moukrim', role: 'Cheffe de Pôle communication et partenariats', department: 'Génie électrique et industrie numérique', email: 'malakmoukruni@gmail.com', image: '/images/bureau/Malak Moukrim.jpg' },
     ]
   },
@@ -148,13 +148,17 @@ export default function Comite() {
         {/* Committee Sections */}
         <div className="container-padding max-w-7xl mx-auto" ref={gridRef}>
           {bureauData.map((section) => (
-            <div key={section.title} className="mb-20">
-              <h3 className="font-orbitron font-bold text-2xl md:text-3xl text-navy tracking-wider mb-8 border-b-2 border-teal/20 pb-4 inline-block">
-                {section.title}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div key={section.title} className="mb-24">
+              <div className="text-center w-full mb-10">
+                <h3 className="font-orbitron font-bold text-2xl md:text-3xl text-navy tracking-wider border-b-2 border-teal/20 pb-4 inline-block">
+                  {section.title}
+                </h3>
+              </div>
+              <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                 {section.members.map((member, i) => (
-                  <MemberCard key={member.name} member={member} index={i} />
+                  <div key={member.name} className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)] xl:w-[calc(25%-2rem)] max-w-[340px]">
+                    <MemberCard member={member} index={i} />
+                  </div>
                 ))}
               </div>
             </div>
