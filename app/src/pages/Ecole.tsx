@@ -30,26 +30,32 @@ export default function Ecole() {
   return (
     <div className="relative min-h-screen bg-slate-50">
       {/* Title */}
-      <section className="pt-32 pb-12 bg-slate-50 text-center relative z-10">
-        <h1 className="font-orbitron font-black text-3xl md:text-5xl lg:text-6xl text-navy tracking-wide leading-tight">
-          L'ENSAM RABAT
+      <section className="pt-32 pb-10 bg-slate-50 text-center relative z-10 px-4">
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-teal/20 bg-teal/5 text-teal text-xs font-bold tracking-[0.2em] mb-6">
+          NOTRE ÉCOLE
+        </div>
+        <h1 className="font-orbitron font-black text-4xl md:text-5xl lg:text-7xl text-navy tracking-tight leading-tight">
+          L'ENSAM <span className="text-teal">RABAT</span>
         </h1>
-        <p className="mt-4 font-montserrat text-lg md:text-xl text-navy/70 uppercase tracking-widest max-w-3xl mx-auto font-medium">
+        <p className="mt-6 font-montserrat text-sm md:text-lg text-navy/70 uppercase tracking-[0.2em] max-w-3xl mx-auto font-medium">
           Former les ingénieurs qui construiront l'industrie de demain
         </p>
       </section>
 
       {/* Hero Video */}
-      <section className="relative w-full h-[60vh] md:h-[80vh] bg-slate-200 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-10"
-        >
-          <source src="/school_video.mp4" type="video/mp4" />
-        </video>
+      <section className="relative w-full pb-20 px-4 sm:px-6 lg:px-8 bg-slate-50 z-10">
+        <div className="max-w-6xl mx-auto relative h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(30,45,74,0.3)] border-8 border-white group">
+          <div className="absolute inset-0 bg-navy/5 z-20 group-hover:bg-transparent transition-colors duration-500"></div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-10"
+          >
+            <source src="/school_video.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
 
       {/* Intro Description */}
