@@ -40,13 +40,13 @@ export default function Ecole() {
       </section>
 
       {/* Hero Video */}
-      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] md:h-[80vh] bg-slate-200">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="w-full h-full object-cover"
         >
           <source src="/school_video.mp4" type="video/mp4" />
         </video>
