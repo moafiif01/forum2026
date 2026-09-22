@@ -156,7 +156,7 @@ export default function Comite() {
               </div>
               <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                 {section.members.map((member, i) => (
-                  <div key={member.name} className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)] xl:w-[calc(25%-2rem)] max-w-[340px]">
+                  <div key={member.name} className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)] xl:w-[calc(25%-2rem)] max-w-sm">
                     <MemberCard member={member} index={i} />
                   </div>
                 ))}

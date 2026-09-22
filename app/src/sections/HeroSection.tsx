@@ -23,12 +23,11 @@ export default function HeroSection() {  return (
           </span>
         </div>
 
-        <h1 className="font-orbitron font-black text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] tracking-tight leading-[1.1] mb-8">
-          <span className="text-navy">
+        <h1 className="font-orbitron font-black text-4xl sm:text-5xl md:text-7xl lg:text-[6.5rem] tracking-tight leading-[1.1] mb-8">
+          <span className="block text-navy mb-2">
             FORUM
           </span>
-          <br />
-          <span className="text-teal tracking-[0.02em]">
+          <span className="block text-teal tracking-[0.02em]">
             ENSAM-RABAT
           </span>
         </h1>

@@ -34,10 +34,10 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="container-padding flex items-center justify-between h-[90px] md:h-[100px]">
+        <div className="container-padding flex items-center justify-between h-[70px] md:h-[100px]">
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
-            <img src="/forum%20logo%20white.png" alt="Forum Industriel ENSAM-Rabat Logo" className="h-16 md:h-20 object-contain invert opacity-90" />
+            <img src="/forum%20logo%20white.png" alt="Forum Industriel ENSAM-Rabat Logo" className="h-12 md:h-20 object-contain invert opacity-90" />
           </Link>
 
           {/* Desktop Nav */}
@@ -85,7 +85,8 @@ export default function Navbar() {
             <Link
               key={link.path}
               to={link.path}
-              className={`font-orbitron font-bold text-xl tracking-[0.1em] transition-colors duration-300 ${
+              onClick={() => setMobileOpen(false)}
+              className={`font-orbitron font-bold text-2xl tracking-[0.1em] transition-colors duration-300 ${
                 location.pathname === link.path
                   ? 'text-teal'
                   : 'text-navy/70 hover:text-navy'
