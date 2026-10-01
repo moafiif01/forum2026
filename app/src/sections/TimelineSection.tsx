@@ -23,7 +23,7 @@ const timelineData = [
     year: 2025,
     title: 'JOURNÉES D\'ENTRETIENS PFE',
     description: 'Organisation des journées d\'entretiens PFE, consolidant le rôle du comité dans la gestion des recrutements de fin d\'études.',
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80',
+    image: '/images/entretiens.jpg',
   },
   {
     year: 2026,
