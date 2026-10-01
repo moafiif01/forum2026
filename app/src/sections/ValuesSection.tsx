@@ -26,8 +26,8 @@ const valuesData: ValueTab[] = [
     ),
     quote: '',
     images: [
-      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80',
+      '/images/echanger1.jpg',
+      '/images/echanger2.jpg',
     ],
   },
   {
