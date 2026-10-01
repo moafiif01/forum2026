@@ -102,13 +102,10 @@ export default function TimelineSection() {
     <section ref={sectionRef} className="relative bg-slate-50 min-h-screen w-full flex flex-col justify-center py-20">
       <div ref={revealRef} className="container-padding">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-orbitron font-bold text-3xl md:text-4xl lg:text-5xl text-navy tracking-[0.08em] mb-4">
-            UN PASSÉ GLORIEUX ...
+        <div className="text-center mb-16 px-4">
+          <h2 className="font-orbitron font-bold text-3xl md:text-4xl lg:text-5xl text-navy tracking-[0.08em] uppercase">
+            Une dynamique construite au fil des années
           </h2>
-          <p className="font-orbitron font-bold text-lg md:text-xl lg:text-2xl text-teal tracking-[0.15em]">
-            UN AVENIR PLUS RADIEUX
-          </p>
         </div>
 
         {/* Timeline */}
