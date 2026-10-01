@@ -43,8 +43,8 @@ const valuesData: ValueTab[] = [
     ),
     quote: '',
     images: [
-      'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
-      'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80',
+      '/images/recruter1.jpg',
+      '/images/recruter2.jpg',
     ],
   },
   {
