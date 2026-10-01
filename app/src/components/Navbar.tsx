@@ -34,14 +34,14 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="container-padding flex items-center justify-between h-[70px] md:h-[100px]">
+        <div className="container-padding flex items-center justify-between h-[70px] md:h-[100px] relative">
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
             <img src="/forum%20logo%20white.png" alt="Forum Industriel ENSAM-Rabat Logo" className="h-12 md:h-20 object-contain invert opacity-90" />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -56,7 +56,6 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-
 
           {/* Mobile hamburger */}
           <button
