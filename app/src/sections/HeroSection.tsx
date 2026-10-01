@@ -33,7 +33,7 @@ export default function HeroSection() {  return (
         </h1>
 
         <p className="font-montserrat text-sm sm:text-base md:text-lg text-navy max-w-4xl mx-auto leading-relaxed tracking-wide mb-10 font-medium">
-          La mutation du métier d'ingénieur à l'ère de l'IA :<br className="hidden md:block" /> Quelles stratégies académi-co-industrielles pour positionner le Maroc comme hub de l'innovation ?
+          L'ingénieur à l'ère de l'IA :<br className="hidden md:block" /> Quelles stratégies académi-co-industrielles pour positionner le Maroc comme hub de l'innovation ?
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-6">

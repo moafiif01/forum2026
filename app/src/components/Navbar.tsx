@@ -57,12 +57,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* INFOMÉDIAIRE CTA */}
-          <div className="hidden lg:block">
-            <span className="font-montserrat text-sm font-bold text-teal tracking-wider">
-              INFOMÉDIAIRE
-            </span>
-          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -95,9 +89,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <span className="font-montserrat text-lg font-bold text-teal tracking-wider mt-4">
-            INFOMÉDIAIRE
-          </span>
+
         </div>
       </div>
     </>
