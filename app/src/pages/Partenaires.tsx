@@ -1,5 +1,5 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import SectionHeader from '@/components/SectionHeader';
+import PartnerLogosSection from '@/sections/PartnerLogosSection';
 
 interface PartnerTier {
   name: string;
@@ -146,22 +146,11 @@ export default function Partenaires() {
             </div>
           ))}
         </div>
-
-        {/* ILS NOUS ONT FAIT CONFIANCE */}
-        <div className="container-padding mt-20">
-          <SectionHeader
-            title="ILS NOUS ONT FAIT CONFIANCE"
-            subtitle=""
-            glowColor="gold"
-          />
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-navy/10">
-            <img 
-              src="/images/nousAfaitConfiance.jpeg" 
-              alt="Ils nous ont fait confiance" 
-              className="w-full h-auto object-cover rounded-xl"
-            />
-          </div>
-        </div>
+      </div>
+      
+      {/* ILS NOUS ONT FAIT CONFIANCE */}
+      <div className="relative z-20 shadow-2xl">
+        <PartnerLogosSection />
       </div>
     </div>
   );
