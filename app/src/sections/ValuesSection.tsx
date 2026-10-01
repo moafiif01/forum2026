@@ -7,7 +7,7 @@ interface ValueTab {
   title: string;
   subtitle: string;
   tagline: string;
-  description: string;
+  description: React.ReactNode;
   quote: string;
   images: string[];
 }
@@ -18,7 +18,12 @@ const valuesData: ValueTab[] = [
     title: 'Échanger',
     subtitle: 'Dialogue de haut niveau',
     tagline: 'Idées · Expériences · Transformations',
-    description: "Créer un espace de dialogue de haut niveau entre étudiants, industriels, experts, chercheurs et décideurs. Le Forum favorise la circulation des idées, le partage d'expériences et la compréhension des transformations qui redéfinissent aujourd'hui l'industrie et l'ingénierie.",
+    description: (
+      <>
+        <p className="mb-4">Créer un espace de dialogue de haut niveau entre étudiants, industriels, experts, chercheurs et décideurs.</p>
+        <p>Le Forum favorise la circulation des idées, le partage d'expériences et la compréhension des transformations qui redéfinissent aujourd'hui l'industrie et l'ingénierie.</p>
+      </>
+    ),
     quote: '',
     images: [
       'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80',
@@ -30,7 +35,12 @@ const valuesData: ValueTab[] = [
     title: 'Recruter',
     subtitle: 'Mise en relation des talents',
     tagline: 'Stages · PFE · Opportunités',
-    description: "Mettre en relation les entreprises avec des profils qualifiés à la recherche de stages, PFE et opportunités professionnelles. Le Forum constitue un espace privilégié pour rencontrer directement les talents, identifier des profils et créer de nouvelles opportunités de collaboration.",
+    description: (
+      <>
+        <p className="mb-4">Mettre en relation les entreprises avec des profils qualifiés à la recherche de <strong className="font-bold text-navy">stages, PFE et opportunités professionnelles</strong>.</p>
+        <p>Le Forum constitue un espace privilégié pour rencontrer directement les talents, identifier des profils et créer de nouvelles opportunités de collaboration.</p>
+      </>
+    ),
     quote: '',
     images: [
       'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
@@ -42,7 +52,12 @@ const valuesData: ValueTab[] = [
     title: 'Co-Construire',
     subtitle: 'De nouvelles collaborations',
     tagline: 'Formation · Innovation · Recherche',
-    description: "Faire émerger de nouvelles collaborations entre l'ENSAM Rabat et les entreprises autour des enjeux de formation, d'innovation, de recherche et de transfert technologique. L'objectif est de faire du dialogue Académie–Industrie un véritable levier de transformation durable. La première édition avait notamment permis d'identifier la recherche commune, le transfert technologique et l'adaptation des formations comme des axes structurants de collaboration.",
+    description: (
+      <>
+        <p className="mb-4">Faire émerger de nouvelles collaborations entre l'ENSAM Rabat et les entreprises autour des enjeux de formation, d'innovation, de recherche et de transfert technologique.</p>
+        <p>L'objectif est de faire du dialogue Académie–Industrie un véritable levier de transformation durable. La première édition avait notamment permis d'identifier la recherche commune, le transfert technologique et l'adaptation des formations comme des axes structurants de collaboration.</p>
+      </>
+    ),
     quote: '',
     images: [
       'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80',
@@ -128,9 +143,9 @@ export default function ValuesSection() {
                 {activeValue.tagline}
               </p>
             )}
-            <p className="font-montserrat text-sm md:text-base text-navy/80 font-medium leading-relaxed mb-6">
+            <div className="font-montserrat text-sm md:text-base text-navy/80 font-medium leading-relaxed mb-6">
               {activeValue.description}
-            </p>
+            </div>
             {activeValue.quote && (
               <p className="font-montserrat text-sm md:text-base text-navy/60 italic">
                 {activeValue.quote}
