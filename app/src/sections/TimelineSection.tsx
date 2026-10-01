@@ -10,7 +10,7 @@ const timelineData = [
     year: 2017,
     title: '1ÈRE ÉDITION FORUM ENSET',
     description: '28-29 Mars 2017 : 1ère Édition du Forum ENSET-Entreprises.',
-    image: '/images/forum2018.jpg',
+    image: '/images/enset_logo.png',
   },
 
   {
@@ -175,7 +175,7 @@ export default function TimelineSection() {
                 <img
                   src={activeData.image}
                   alt={activeData.title}
-                  className="animate-img w-full h-full object-cover"
+                  className={`animate-img w-full h-full ${activeData.image.includes('logo') ? 'object-contain p-8' : 'object-cover'}`}
                 />
               </div>
             </div>
