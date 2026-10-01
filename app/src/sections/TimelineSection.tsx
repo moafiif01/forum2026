@@ -158,7 +158,7 @@ export default function TimelineSection() {
             className="w-full flex-1 glass-card rounded-2xl overflow-hidden border border-navy/10 hover:border-teal/30 hover:shadow-soft transition-all duration-500"
           >
             <div className="flex flex-col md:flex-row h-full">
-              <div className="p-8 md:p-10 flex-1 flex flex-col justify-center relative z-20 bg-white/80 backdrop-blur-sm">
+              <div className="p-8 md:p-10 flex-1 flex flex-col justify-center relative z-20 bg-white/80 backdrop-blur-sm md:min-h-[350px] lg:min-h-[400px]">
                 <span className="animate-element font-orbitron font-black text-5xl md:text-6xl text-teal mb-2 inline-block">
                   {activeData.year}
                 </span>
@@ -175,7 +175,7 @@ export default function TimelineSection() {
                 <img
                   src={activeData.image}
                   alt={activeData.title}
-                  className={`animate-img w-full h-full ${activeData.image.includes('logo') ? 'object-contain p-8' : 'object-cover'}`}
+                  className={`absolute inset-0 animate-img w-full h-full ${activeData.image.includes('logo') ? 'object-contain p-8' : 'object-cover'}`}
                 />
               </div>
             </div>
