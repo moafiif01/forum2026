@@ -141,7 +141,7 @@ export default function Comite() {
             LE BUREAU DU FORUM
           </h1>
           <p className="font-orbitron font-bold text-lg md:text-2xl text-teal tracking-[0.15em] mt-4">
-            XXXIIÈME ÉDITION
+            2ÈME ÉDITION
           </p>
         </div>
 
