@@ -90,6 +90,10 @@ module.exports = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "scroll-logos-reverse": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -99,6 +103,7 @@ module.exports = {
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         "streak": "streak 8s linear infinite",
         "scroll-logos": "scroll-logos 30s linear infinite",
+        "scroll-logos-reverse": "scroll-logos-reverse 30s linear infinite",
       },
     },
   },
