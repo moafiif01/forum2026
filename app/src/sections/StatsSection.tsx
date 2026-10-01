@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import NeonButton from '@/components/NeonButton';
 
 interface StatItem {
   value: number;
@@ -110,10 +109,6 @@ export default function StatsSection() {
                 </div>
               ))}
             </div>
-
-            <NeonButton glowColor="cyan" className="mt-10 px-8 py-6 tracking-[0.2em]">
-              EN SAVOIR PLUS
-            </NeonButton>
           </div>
 
           {/* Right - FE Logo */}
