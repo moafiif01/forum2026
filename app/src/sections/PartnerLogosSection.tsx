@@ -108,12 +108,12 @@ export default function PartnerLogosSection() {
           <div ref={imageRef} className="relative">
             <div className="absolute inset-0 bg-teal/10 blur-[100px] rounded-full" />
             <div className="relative glass-card rounded-2xl overflow-hidden border border-navy/10 shadow-sm p-2 bg-slate-50">
-              <div className="relative rounded-xl overflow-hidden aspect-[4/5] md:aspect-[3/4]">
-                <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent z-10" />
+              <div className="relative rounded-xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent z-10 pointer-events-none" />
                 <img 
                   src="/images/nousAfaitConfiance.jpeg" 
                   alt="Ils nous ont fait confiance" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
