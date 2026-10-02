@@ -36,9 +36,9 @@ const bureauData: CommitteeSection[] = [
     title: 'CELLULE SPONSORING & PARTENARIATS',
     members: [
       { name: 'Fatima Azzahrae Madani', role: 'Cheffe Cellule Sponsoring et Partenariats', department: 'Génie biomédical', email: 'faellacimadani@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/fatima.png' },
-      { name: 'Ilias Iazza', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Ingénierie Automobile et Aéronautique', email: 'iliasiazza0@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/ilia.png' },
+      { name: 'Ilias Iazza', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Ingénierie Automobile et Aéronautique', email: 'iliasiazza0@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Ilias.png' },
       { name: 'Alae Hnine', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Génie électrique et industrie numérique', email: 'hninealae05@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/alae.png' },
-      { name: 'Siham Ait SI', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Ingénierie des systèmes énergétiques', email: 'sihamaitsi34@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/siham.png' },
+      { name: 'Siham Ait SI', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Ingénierie des systèmes énergétiques', email: 'sihamaitsi34@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Siham.png' },
     ]
   },
   {
