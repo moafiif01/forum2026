@@ -19,43 +19,43 @@ const bureauData: CommitteeSection[] = [
   {
     title: 'LE BUREAU EXÉCUTIF',
     members: [
-      { name: 'Rim Jouilil', role: 'Vice-présidente', department: 'Génie mécanique', email: 'jouililrim.ensamr@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (1).png' },
-      { name: 'Nihale Fenzari', role: 'Présidente', department: 'Ingénierie automobile et aéronautique', email: 'Nihale_Fenzari@um5.ac.ma', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (2).png' },
-      { name: 'Malak Moukrim', role: 'Cheffe de Pôle communication et partenariats', department: 'Génie électrique et industrie numérique', email: 'malakmoukruni@gmail.com', image: '/images/bureau_new/Sans titre (3).png' },
+      { name: 'Rim Jouilil', role: 'Vice-présidente', department: 'Génie mécanique', email: 'jouililrim.ensamr@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/rim.png' },
+      { name: 'Nihale Fenzari', role: 'Présidente', department: 'Ingénierie automobile et aéronautique', email: 'Nihale_Fenzari@um5.ac.ma', linkedin: 'https://linkedin.com', image: '/images/bureau_new/nihale.png' },
+      { name: 'Malak Moukrim', role: 'Cheffe de Pôle communication et partenariats', department: 'Génie électrique et industrie numérique', email: 'malakmoukruni@gmail.com', image: '/images/bureau_new/malak.png' },
     ]
   },
   {
     title: 'CELLULE COMMUNICATION ET PROSPECTION',
     members: [
-      { name: 'Sara Nadi', role: 'Cheffe Cellule Communication et Prospection', department: 'Génie électrique et industries numériques', email: 'nadisara1805@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (4).png' },
-      { name: 'Ayoub Ait Boubker', role: 'Membre Cellule Communication et Prospection', department: 'Génie électrique et industries numériques', email: 'ayoub.aitboubker.um5r@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (5).png' },
-      { name: 'Ghita Saidi', role: 'Membre Cellule Communication et Prospection', department: 'Années préparatoires intégrées', email: 'saidighita07@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (6).png' },
+      { name: 'Sara Nadi', role: 'Cheffe Cellule Communication et Prospection', department: 'Génie électrique et industries numériques', email: 'nadisara1805@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/sara.png' },
+       { name: 'Ayoub Ait Boubker', role: 'Membre Cellule Communication et Prospection', department: 'Génie électrique et industries numériques', email: 'ayoub.aitboubker.um5r@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/ayoub.png' },
+      { name: 'Ghita Saidi', role: 'Membre Cellule Communication et Prospection', department: 'Années préparatoires intégrées', email: 'saidighita07@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/ghita.png' },
     ]
   },
   {
     title: 'CELLULE SPONSORING & PARTENARIATS',
     members: [
-      { name: 'Fatima Azzahrae Madani', role: 'Cheffe Cellule Sponsoring et Partenariats', department: 'Génie biomédical', email: 'faellacimadani@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (7).png' },
-      { name: 'Ilias Iazza', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Ingénierie Automobile et Aéronautique', email: 'iliasiazza0@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (8).png' },
-      { name: 'Alae Hnine', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Génie électrique et industrie numérique', email: 'hninealae05@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (9).png' },
-      { name: 'Siham Ait SI', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Ingénierie des systèmes énergétiques', email: 'sihamaitsi34@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (10).png' },
+      { name: 'Fatima Azzahrae Madani', role: 'Cheffe Cellule Sponsoring et Partenariats', department: 'Génie biomédical', email: 'faellacimadani@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/fatima.png' },
+      { name: 'Ilias Iazza', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Ingénierie Automobile et Aéronautique', email: 'iliasiazza0@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/ilia.png' },
+      { name: 'Alae Hnine', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Génie électrique et industrie numérique', email: 'hninealae05@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/alae.png' },
+      { name: 'Siham Ait SI', role: 'Membre Cellule Sponsoring et Partenariats', department: 'Ingénierie des systèmes énergétiques', email: 'sihamaitsi34@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/siham.png' },
     ]
   },
   {
     title: 'CELLULE LOGISTIQUE',
     members: [
-      { name: 'Nouhaila Salek', role: 'Cheffe Cellule Logistique', department: 'Ingénierie des systèmes énergétiques et environnement', email: 'nouhailasalek05@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (11).png' },
-      { name: 'Imane Khalid', role: 'Membre Cellule Logistique', department: '', email: 'Imanekhalidofficiel777@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (12).png' },
-      { name: 'Hassan Rakkan', role: 'Membre Cellule Logistique', department: 'Génie électrique et industrie numérique', email: 'reknehassn@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (13).png' },
+      { name: 'Nouhaila Salek', role: 'Cheffe Cellule Logistique', department: 'Ingénierie des systèmes énergétiques et environnement', email: 'nouhailasalek05@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/nouhaila.png' },
+      { name: 'Imane Khalid', role: 'Membre Cellule Logistique', department: '', email: 'Imanekhalidofficiel777@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/imane.png' },
+      { name: 'Hassan Rakkan', role: 'Membre Cellule Logistique', department: 'Génie électrique et industrie numérique', email: 'reknehassn@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/hassan.png' },
     ]
   },
   {
     title: 'CELLULE MEDIA ET DESIGN',
     members: [
-      { name: 'Douae Laarod', role: 'Cheffe Cellule Media et design', department: 'Génie électrique et industrie numérique', email: 'douaelaar123@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (14).png' },
-      { name: 'Kazelma Izerou Chaibou', role: 'Membre Cellule Media et design', department: 'Ingénierie automobile et aéronautique', email: 'izeirouk@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/Sans titre (15).png' },
-      { name: 'Amira El Bir', role: 'Membre Cellule Media et design', department: 'Ingénierie numérique en data et IA', email: 'amiraelbir36@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/download.png' },
-      { name: 'Hajar Fatam', role: 'Membre Cellule Media et design', department: 'Ingénierie aéronautique', email: 'hajarfatam853@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/mur blanc.png' },
+      { name: 'Douae Laarod', role: 'Cheffe Cellule Media et design', department: 'Génie électrique et industrie numérique', email: 'douaelaar123@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/douae.png' },
+      { name: 'Kazelma Izerou Chaibou', role: 'Membre Cellule Media et design', department: 'Ingénierie automobile et aéronautique', email: 'izeirouk@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/kazelma.png' },
+      { name: 'Amira El Bir', role: 'Membre Cellule Media et design', department: 'Ingénierie numérique en data et IA', email: 'amiraelbir36@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/amira.png' },
+      { name: 'Hajar Fatam', role: 'Membre Cellule Media et design', department: 'Ingénierie aéronautique', email: 'hajarfatam853@gmail.com', linkedin: 'https://linkedin.com', image: '/images/bureau_new/hajar.png' },
     ]
   }
 ];
