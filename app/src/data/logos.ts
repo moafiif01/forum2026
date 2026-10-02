@@ -56,6 +56,5 @@ export const partnerLogos = [
     "Dossier de Partenariat du Forum industriel ENSAMR (6).png",
     "Dossier de Partenariat du Forum industriel ENSAMR (7).png",
     "Dossier de Partenariat du Forum industriel ENSAMR (8).png",
-    "Dossier de Partenariat du Forum industriel ENSAMR (9).png",
-    "Dossier de Partenariat du Forum industriel ENSAMR.png"
+    "Dossier de Partenariat du Forum industriel ENSAMR (9).png"
 ]
